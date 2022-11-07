@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { DetailedHTMLProps, TextareaHTMLAttributes } from "react";
 
-interface ITextArea extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+export interface ITextArea extends DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
 
 }
 

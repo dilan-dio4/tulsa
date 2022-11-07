@@ -1,4 +1,13 @@
-import { Button, IconButton, TextInput, TextArea, FormControl, Spinner, Checkbox } from '../../../core/src';
+import { 
+    Button, 
+    IconButton, 
+    TextInput, 
+    TextArea, 
+    FormControl, 
+    Spinner, 
+    Checkbox,
+    Radio
+} from '../../../core/src';
 import { BiChevronDown, BiSearch } from 'react-icons/bi';
 
 export default function App() {
@@ -89,6 +98,12 @@ export default function App() {
                 <h2>Checkbox</h2>
                 <Checkbox className='mt-2' />
                 <Checkbox className='mt-2' label='With a label' />
+                <Checkbox className='mt-2' label='Disabled' disabled />
+                
+                <h2>Radio</h2>
+                <Radio className='mt-2' />
+                <Radio className='mt-2' label='With a label' />
+                <Radio className='mt-2' label='Disabled' disabled />
             </article>
         </div>
         </main>

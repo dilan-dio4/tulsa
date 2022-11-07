@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { SVGProps } from "react";
 
-interface ISpinner extends SVGProps<SVGSVGElement> {
+export interface ISpinner extends SVGProps<SVGSVGElement> {
     size?: "sm" | "md" | "lg";
 }
 

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React, { DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes } from "react";
 import { Spinner } from '../Spinner';
 
-interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     leadingVisual?: string | React.ReactElement;
     leadingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     trailingVisual?: string | React.ReactElement;

@@ -3,7 +3,7 @@ import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTML
 import { nanoid } from 'nanoid'
 import FormControlContext from './Context';
 
-interface IFormControl extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface IFormControl extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     status?: "neutral" | "success" | "error";
     id?: string;
 }

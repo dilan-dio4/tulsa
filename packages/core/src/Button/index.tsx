@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2";
 
-type Variant = "Primary" | "Secondary" | "Invisible";
+export type Variant = "Primary" | "Secondary" | "Invisible";
 
 function getColorScheme(variant: Variant) {
     switch (variant) {
