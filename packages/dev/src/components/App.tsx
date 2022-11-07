@@ -7,7 +7,8 @@ import {
     Spinner,
     Checkbox,
     Radio,
-    Select
+    Select,
+    Switch
 } from '../../../core/src';
 import { BiArrowToRight, BiChevronDown, BiChevronRight, BiSearch } from 'react-icons/bi';
 
@@ -158,6 +159,13 @@ export default function App() {
                             <Select.Option value={"World"}>World</Select.Option>
                         </Select.OptGroup>
                     </Select>
+                    <h3>Switch</h3>
+                    <div className='my-2'><Switch /></div>
+                    <div className='my-2'><Switch label={"With a label"} /></div>
+                    <h3>Sizes</h3>
+                    {(["sm", "md", "lg"] as const).map(size => (
+                        <div className='my-2'><Switch size={size} label={size} /></div>
+                    ))}
                 </article>
             </div>
         </main>

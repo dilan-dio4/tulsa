@@ -5,3 +5,4 @@ export * from './FormControl';
 export * from './Spinner';
 export * from './ToggleBox';
 export * from './Select';
+export * from './Switch';

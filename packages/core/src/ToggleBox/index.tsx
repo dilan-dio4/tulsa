@@ -2,14 +2,14 @@ import clsx from "clsx";
 import { nanoid } from "nanoid";
 import { DetailedHTMLProps, InputHTMLAttributes, LabelHTMLAttributes, useRef } from "react";
 
-export interface IToggleBox extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface IToggleBox extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "size"> {
     id?: string;
     label?: string;
     labelProps?: DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 }
 
 const ToggleBox = (type: "radio" | "checkbox") => ({ id, label, labelProps, ...props }: IToggleBox) => {
-    const formId = useRef<string>(id || `checkbox-${nanoid()}`);
+    const formId = useRef<string>(id || `toggle-box-${nanoid()}`);
 
     const checkedEle = type === "checkbox" ?
         "checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9JyNmZmYnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTEyLjIwNyA0Ljc5M2ExIDEgMCAwIDEgMCAxLjQxNGwtNSA1YTEgMSAwIDAgMS0xLjQxNCAwbC0yLTJhMSAxIDAgMCAxIDEuNDE0LTEuNDE0TDYuNSA5LjA4Nmw0LjI5My00LjI5M2ExIDEgMCAwIDEgMS40MTQgMHonLz48L3N2Zz4=')]"
