@@ -6,12 +6,23 @@ interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>
     leadingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     trailingVisual?: string | React.ReactElement;
     trailingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
+    leadingAddon?: React.ReactElement;
+    trailingAddon?: React.ReactElement;
     rootProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
 }
 
-export function TextInput({ leadingVisual, trailingVisual, rootProps, leadingVisualProps, trailingVisualProps, ...props }: IInput) {
-    const coreStyle = "inline-flex border border-gray-300 group-[.is-error]:border-red-300 group-[.is-success]:border-green-400 px-3";
-    const visualBaseStyle = "items-center bg-gray-50 text-sm text-gray-500";
+export function TextInput({ 
+    leadingAddon,
+    trailingAddon,
+    leadingVisual, 
+    trailingVisual, 
+    rootProps, 
+    leadingVisualProps, 
+    trailingVisualProps, 
+    ...props 
+}: IInput) {
+    const coreStyle = "inline-flex items-center border border-gray-300 group-[.is-error]:border-red-300 group-[.is-success]:border-green-400 px-3";
+    const visualBaseStyle = "bg-gray-50 text-sm text-gray-500";
     return (
         <span {...rootProps} className={clsx("flex sm:text-sm", rootProps?.className)}>
             {leadingVisual && (
@@ -28,20 +39,28 @@ export function TextInput({ leadingVisual, trailingVisual, rootProps, leadingVis
                 </span>
             )}
 
-            <input
-                type="text"
-                {...props}
+            <span
                 className={clsx(
                     coreStyle,
-                    "z-10 appearance-none bg-white py-2 rounded-md shadow-sm",
-                    "focus:outline-none focus:ring-1 focus:border-indigo-500 focus:ring-indigo-500",
-                    "group-[.is-error]:text-red-500 focus:group-[.is-error]:border-red-300 focus:group-[.is-error]:ring-red-500",
-                    "group-[.is-success]:text-green-600 focus:group-[.is-success]:border-green-300 focus:group-[.is-success]:ring-green-500",
+                    "z-10 bg-white rounded-md shadow-sm",
+                    "focus-within:ring-1 focus-within:border-indigo-500 focus-within:ring-indigo-500",
+                    "group-[.is-error]:text-red-500 focus-within:group-[.is-error]:border-red-500 focus-within:group-[.is-error]:ring-red-500",
+                    "group-[.is-success]:text-green-600 focus-within:group-[.is-success]:border-green-400 focus-within:group-[.is-success]:ring-green-400",
                     leadingVisual && "rounded-l-none",
                     trailingVisual && "rounded-r-none",
-                    props.className
                 )}
-            />
+            >
+                {leadingAddon && <span className="mr-2">{leadingAddon}</span>}
+                <input
+                    type="text"
+                    className={clsx(
+                        props.className,
+                        "py-2 appearance-none focus:outline-none "
+                    )}
+                    {...props}
+                />
+                {trailingAddon && <span className="ml-2">{trailingAddon}</span>}
+            </span>
 
 
             {trailingVisual && (

@@ -1,5 +1,5 @@
 import { Button, IconButton, TextInput, TextArea, FormControl, Spinner } from '../../../core/src';
-import { BiSearch } from 'react-icons/bi';
+import { BiChevronDown, BiSearch } from 'react-icons/bi';
 
 export default function App() {
 
@@ -41,6 +41,10 @@ export default function App() {
                 <h3>Visuals</h3>
                 <TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
                 <TextInput placeholder='Enter Text' leadingVisual={"$"} rootProps={{ className: "mt-4" }} />
+
+                <h3>Addons</h3>
+                <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." />
+                <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingAddon={<BiChevronDown size={18} className='text-gray-400' />} />
 
                 <h2>TextArea</h2>
                 <TextArea placeholder='Enter Text' />
