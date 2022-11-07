@@ -1,19 +1,50 @@
-import { Button, IconButton } from '../../../core/src';
+import { Button, IconButton, ButtonCounter, TextInput, TextArea } from '../../../core/src';
 import { BiSearch } from 'react-icons/bi';
 
 export default function App() {
     return (
-        <div className='max-w-[600px] m-4'>
-            <Button className='mt-2' size='xs' leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-            <Button className='mt-2' size='sm' leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-            <Button className='mt-2' size='md' leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-            <Button className='mt-2' size='lg' leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-            <IconButton size='xs' icon={<BiSearch size={"1em"} color="inherit" />} />
-            <IconButton size='sm' icon={<BiSearch size={"1em"} color="inherit" />} />
-            <IconButton size='lg' icon={<BiSearch size={"1em"} color="inherit" />} />
-            <IconButton size='xs' circle icon={<BiSearch size={"1em"} color="inherit" />} />
-            <IconButton size='sm' circle icon={<BiSearch size={"1em"} color="inherit" />} />
-            <IconButton size='lg' circle icon={<BiSearch size={"1em"} color="inherit" />} />
+        <main className='my-4 bg-[#fdfdfd]'>
+        <div className='max-w-[600px] mx-auto'>
+            <article className='prose'>
+                <h1>Tulsa</h1>
+                <h2>Button</h2>
+                <h3>Sizes</h3>
+                {(["xs", "sm", "md", "lg"] as const).map(size => (
+                    <Button key={size} className='mt-2' size={size} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
+                ))}
+                <h3>Variants</h3>
+                {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
+                    <Button key={variant} className='mt-2' variant={variant} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
+                ))}
+
+                <h2>IconButton</h2>
+                <h3>Sizes</h3>
+                {(["xs", "sm","lg"] as const).map(size => (
+                    <IconButton className='mt-2' key={size} size={size} icon={<BiSearch size={"1em"} color="inherit" />} />
+                ))}
+                <h3>Variants</h3>
+                {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
+                    <IconButton className='mt-2' key={variant} variant={variant} icon={<BiSearch size={"1em"} color="inherit" />} />
+                ))}
+                <h3>Circle</h3>
+                <IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
+
+                <h3>Button Counter</h3>
+                <Button className='mt-2' trailingVisual={<ButtonCounter>2</ButtonCounter>}>Search</Button>
+                
+                <h2>TextInput</h2>
+                
+                <h3>Base</h3>
+                <TextInput placeholder='Enter Text' />
+
+                <h3>Visuals</h3>
+                <TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
+                <TextInput placeholder='Enter Text' leadingVisual={"$"} rootProps={{ className: "mt-4" }} />
+
+                <h2>TextArea</h2>
+                <TextArea placeholder='Enter Text' />
+            </article>
         </div>
+        </main>
     )
 }

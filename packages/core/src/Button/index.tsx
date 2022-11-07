@@ -1,5 +1,5 @@
 import { flexCenter } from '../utilities';
-import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+import React, { ButtonHTMLAttributes, DetailedHTMLProps, HTMLAttributes } from "react";
 import clsx from 'clsx';
 
 const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -12,12 +12,14 @@ function getColorScheme(variant: Variant) {
             return "text-gray-700 border-gray-300 bg-white hover:bg-gray-50 focus:ring-indigo-500 focus:ring-offset-gray-100";
         case "Secondary":
             return "text-white border-transparent bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-gray-100";
+        case "Invisible":
+            return "font-bold text-indigo-500 border-transparent bg-transparent shadow-none hover:bg-gray-100 focus:ring-indigo-500 focus:ring-offset-gray-100";
         default:
             break;
     }
 }
 
-interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     leadingVisual?: React.ReactElement;
     trailingVisual?: React.ReactElement;
     size?: "xs" | "sm" | "md" | "lg";
@@ -65,8 +67,8 @@ export function Button({
 
     return (
         <button
-            {...props}
             role="button"
+            {...props}
             className={clsx(flexCenter, rootButtonClassName, getFontSize(), getPadding(), getColorScheme(variant), props.className)}
         >
             {leadingVisual && <span className={clsx(size === "lg" ? "mr-3" : 'mr-1.5')}>{leadingVisual}</span>}
@@ -76,7 +78,7 @@ export function Button({
     )
 }
 
-interface IIconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export  interface IIconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     icon: React.ReactElement;
     size?: "xs" | "sm" | "lg";
     circle?: boolean;
@@ -121,17 +123,33 @@ export function IconButton({
     return (
         <button
             role="button"
+            {...props}
             className={clsx(flexCenter, rootButtonClassName, "!p-0", circle && "rounded-full", getColorScheme(variant), props.className)}
             style={{
                 minHeight: getRootHeight(),
                 minWidth: getRootHeight(),
                 maxHeight: getRootHeight(),
                 maxWidth: getRootHeight(),
-                fontSize: getFontSize()
+                fontSize: getFontSize(),
+                ...props.style
             }}
-            {...props}
         >
             {icon}
         </button>
+    )
+}
+
+interface IButtonCounter extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+    children: string;
+}
+
+export function ButtonCounter({ children, ...props }: IButtonCounter) {
+    return (
+        <span
+            {...props}
+            className={clsx("ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em] bg-gray-200", props.className)}
+        >
+            {children}
+        </span>
     )
 }
