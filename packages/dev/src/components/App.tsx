@@ -6,7 +6,8 @@ import {
     FormControl,
     Spinner,
     Checkbox,
-    Radio
+    Radio,
+    Select
 } from '../../../core/src';
 import { BiArrowToRight, BiChevronDown, BiChevronRight, BiSearch } from 'react-icons/bi';
 
@@ -122,6 +123,41 @@ export default function App() {
                     <Radio className='mt-2' />
                     <Radio className='mt-2' label='With a label' />
                     <Radio className='mt-2' label='Disabled' disabled />
+
+                    <h2>Select</h2>
+                    <Select required>
+                        <Select.Option value={"Hello"}>Hello</Select.Option>
+                        <Select.Option value={"World"}>World</Select.Option>
+                    </Select>
+
+                    <h3>Placeholder</h3>
+                    <Select placeholder='Placeholder'>
+                        <Select.Option value={"Hello"}>Hello</Select.Option>
+                        <Select.Option value={"World"}>World</Select.Option>
+                    </Select>
+
+                    <h3>Disabled</h3>
+                    <Select
+                        placeholder='Placeholder'
+                        disabled
+                    >
+                        <Select.Option value={"Hello"}>Hello</Select.Option>
+                        <Select.Option value={"World"}>World</Select.Option>
+                    </Select>
+
+                    <h3>Option Groups</h3>
+                    <Select
+                        placeholder='Placeholder'
+                    >
+                        <Select.OptGroup label="Group 1">
+                            <Select.Option value={"Hello"}>Hello</Select.Option>
+                            <Select.Option value={"World"}>World</Select.Option>
+                        </Select.OptGroup>
+                        <Select.OptGroup label="Group 2">
+                            <Select.Option value={"Hello"}>Hello</Select.Option>
+                            <Select.Option value={"World"}>World</Select.Option>
+                        </Select.OptGroup>
+                    </Select>
                 </article>
             </div>
         </main>

@@ -39,7 +39,7 @@ function _Button<T extends ElementType = "button">({
     variant = "Primary",
     as,
     ...props
-}: IButtonProps<T> & ComponentPropsWithoutRef<T>) {
+}: IButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, "size">) {
 
     function getFontSize() {
         switch (size) {
@@ -122,7 +122,7 @@ export function IconButton<T extends ElementType = "button">({
     circle,
     as,
     ...props
-}: IIconButtonProps<T> & ComponentPropsWithoutRef<T>) {
+}: IIconButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, "size">) {
 
     function getRootHeight() {
         switch (size) {

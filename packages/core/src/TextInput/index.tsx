@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import React, { DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes } from "react";
+import React, { ComponentPropsWithoutRef, DetailedHTMLProps, ElementType, HTMLAttributes } from "react";
 import { Spinner } from '../Spinner';
 
-export interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+export interface IInput<T extends ElementType>{
     leadingVisual?: string | React.ReactElement;
     leadingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     trailingVisual?: string | React.ReactElement;
@@ -11,9 +11,10 @@ export interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputE
     trailingAddon?: React.ReactElement;
     rootProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     loading?: boolean;
+    as?: T;
 }
 
-export function TextInput({ 
+export function TextInput<T extends ElementType = "input">({ 
     leadingAddon,
     trailingAddon,
     leadingVisual, 
@@ -22,10 +23,14 @@ export function TextInput({
     leadingVisualProps, 
     trailingVisualProps, 
     loading,
+    as,
     ...props 
-}: IInput) {
+}: IInput<T> & ComponentPropsWithoutRef<T>) {
     const coreStyle = "inline-flex items-center border border-gray-300 group-[.is-error]:border-red-300 group-[.is-success]:border-green-400 px-3";
     const visualBaseStyle = "bg-gray-50 text-sm text-gray-500";
+
+    const Component = as || "input";
+
     return (
         <span {...rootProps} className={clsx("flex sm:text-sm", rootProps?.className)}>
             {leadingVisual && (
@@ -54,7 +59,7 @@ export function TextInput({
                 )}
             >
                 {leadingAddon && <span className="mr-2">{leadingAddon}</span>}
-                <input
+                <Component
                     type="text"
                     className={clsx(
                         props.className,
