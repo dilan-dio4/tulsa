@@ -1,4 +1,4 @@
-import { Button, IconButton, TextInput, TextArea, FormControl, Spinner } from '../../../core/src';
+import { Button, IconButton, TextInput, TextArea, FormControl, Spinner, Checkbox } from '../../../core/src';
 import { BiChevronDown, BiSearch } from 'react-icons/bi';
 
 export default function App() {
@@ -79,6 +79,9 @@ export default function App() {
                     <Spinner key={size} className='mt-2' size={size} />
                 ))}
 
+                <h2>Checkbox</h2>
+                <Checkbox className='mt-2' />
+                <Checkbox className='mt-2' label='With a label' />
             </article>
         </div>
         </main>

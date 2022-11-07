@@ -3,3 +3,4 @@ export * from './TextInput';
 export * from './TextArea';
 export * from './FormControl';
 export * from './Spinner';
+export * from './Checkbox';
