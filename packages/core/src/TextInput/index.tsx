@@ -50,7 +50,7 @@ export function TextInput<T extends ElementType = "input">({
             <span
                 className={clsx(
                     coreStyle,
-                    "z-10 bg-white rounded-md shadow-sm",
+                    "focus-within:z-10 bg-white rounded-md shadow-sm",
                     "focus-within:ring-1 focus-within:border-indigo-500 focus-within:ring-indigo-500",
                     "focus-within:group-[.is-error]:border-red-500 focus-within:group-[.is-error]:ring-red-500",
                     "focus-within:group-[.is-success]:border-green-400 focus-within:group-[.is-success]:ring-green-400",

@@ -8,9 +8,10 @@ import {
     Checkbox,
     Radio,
     Select,
-    Switch
+    Switch,
+    ButtonGroup
 } from '../../../core/src';
-import { BiArrowToRight, BiChevronDown, BiChevronRight, BiSearch } from 'react-icons/bi';
+import { BiChevronDown, BiChevronRight, BiSearch } from 'react-icons/bi';
 
 export default function App() {
 
@@ -37,7 +38,8 @@ export default function App() {
                         className='mt-2 w-full'
                         leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}
                         trailingVisual={
-                            <BiChevronRight size={"1.1em"}
+                            <BiChevronRight 
+                                size={"1.4em"}
                                 color="inherit"
                                 className='ml-auto'
                             />
@@ -159,13 +161,28 @@ export default function App() {
                             <Select.Option value={"World"}>World</Select.Option>
                         </Select.OptGroup>
                     </Select>
-                    <h3>Switch</h3>
+
+                    <h2>Switch</h2>
                     <div className='my-2'><Switch /></div>
                     <div className='my-2'><Switch label={"With a label"} /></div>
+
                     <h3>Sizes</h3>
                     {(["sm", "md", "lg"] as const).map(size => (
-                        <div className='my-2'><Switch size={size} label={size} /></div>
+                        <div className='my-2' key={size}><Switch size={size} label={size} /></div>
                     ))}
+
+                    <h2>Button Group</h2>
+                    <ButtonGroup>
+                        <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
+                        <Button selected leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Selected</Button>
+                        <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
+                    </ButtonGroup>
+                    <h3>Icon Buttons</h3>
+                    <ButtonGroup>
+                        <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                        <IconButton selected className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                        <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                    </ButtonGroup>
                 </article>
             </div>
         </main>

@@ -2,7 +2,8 @@ import { flexCenter } from '../utilities';
 import React, { DetailedHTMLProps, ElementType, HTMLAttributes, ComponentPropsWithoutRef } from "react";
 import clsx from 'clsx';
 
-const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2";
+const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:z-10";
+const rootButtonGroupHelper = "group-[.button-group]:rounded-none group-[.button-group]:first:rounded-l group-[.button-group]:last:rounded-r group-[.button-group]:border-x-[0.5px] group-[.button-group]:first:border-l group-[.button-group]:last:border-r group-[.button-group]:ring-offset-0";
 
 export type Variant = "Primary" | "Secondary" | "Invisible";
 
@@ -27,6 +28,7 @@ export interface IButtonProps<T extends ElementType> {
     size?: "xs" | "sm" | "md" | "lg";
     variant?: Variant;
     as?: T;
+    selected?: boolean;
 }
 
 function _Button<T extends ElementType = "button">({
@@ -38,6 +40,7 @@ function _Button<T extends ElementType = "button">({
     size = "md",
     variant = "Primary",
     as,
+    selected,
     ...props
 }: IButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, "size">) {
 
@@ -77,7 +80,16 @@ function _Button<T extends ElementType = "button">({
         <Component
             role={Component === "button" ? "button" : undefined}
             {...props}
-            className={clsx(flexCenter, rootButtonClassName, getFontSize(), getPadding(), getColorScheme(variant), props.className)}
+            className={clsx(
+                flexCenter,
+                rootButtonClassName,
+                rootButtonGroupHelper,
+                getFontSize(),
+                getPadding(),
+                getColorScheme(variant),
+                selected && "opacity-70 border-[rgba(118, 118, 118, 0.3)] bg-gray-200",
+                props.className
+            )}
         >
             {leadingVisual && <span {...leadingVisualProps} className={clsx(size === "lg" ? "mr-3" : size === "xs" ? "mr-0.5" : 'mr-1.5', leadingVisualProps?.className)}>{leadingVisual}</span>}
             {children}
@@ -112,6 +124,7 @@ export interface IIconButtonProps<T extends ElementType> {
     circle?: boolean;
     variant?: Variant;
     as?: T;
+    selected?: boolean;
 }
 
 
@@ -121,6 +134,7 @@ export function IconButton<T extends ElementType = "button">({
     variant = "Primary",
     circle,
     as,
+    selected,
     ...props
 }: IIconButtonProps<T> & Omit<ComponentPropsWithoutRef<T>, "size">) {
 
@@ -156,7 +170,16 @@ export function IconButton<T extends ElementType = "button">({
         <Component
             role={Component === "button" ? "button" : undefined}
             {...props}
-            className={clsx(flexCenter, rootButtonClassName, "!p-0", circle && "rounded-full", getColorScheme(variant), props.className)}
+            className={clsx(
+                flexCenter,
+                rootButtonClassName,
+                rootButtonGroupHelper,
+                "!p-0",
+                circle && "rounded-full",
+                getColorScheme(variant),
+                selected && "opacity-70 border-[rgba(118, 118, 118, 0.3)] bg-gray-200",
+                props.className
+            )}
             style={{
                 minHeight: getRootHeight(),
                 minWidth: getRootHeight(),
