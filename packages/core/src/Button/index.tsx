@@ -26,7 +26,7 @@ export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTM
     variant?: Variant;
 }
 
-export function Button({ 
+function _Button({ 
     leadingVisual, 
     trailingVisual, 
     children, 
@@ -78,7 +78,27 @@ export function Button({
     )
 }
 
-export  interface IIconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+
+export interface IButtonCounter extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+    children: string;
+}
+
+function Counter({ children, ...props }: IButtonCounter) {
+    return (
+        <span
+            {...props}
+            className={clsx("ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em] bg-gray-200", props.className)}
+        >
+            {children}
+        </span>
+    )
+}
+
+export const Button = Object.assign(_Button, {
+    Counter
+})
+
+export interface IIconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     icon: React.ReactElement;
     size?: "xs" | "sm" | "lg";
     circle?: boolean;
@@ -136,20 +156,5 @@ export function IconButton({
         >
             {icon}
         </button>
-    )
-}
-
-interface IButtonCounter extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
-    children: string;
-}
-
-export function ButtonCounter({ children, ...props }: IButtonCounter) {
-    return (
-        <span
-            {...props}
-            className={clsx("ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em] bg-gray-200", props.className)}
-        >
-            {children}
-        </span>
     )
 }

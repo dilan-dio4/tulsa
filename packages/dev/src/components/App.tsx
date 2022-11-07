@@ -1,7 +1,8 @@
-import { Button, IconButton, ButtonCounter, TextInput, TextArea } from '../../../core/src';
+import { Button, IconButton, TextInput, TextArea } from '../../../core/src';
 import { BiSearch } from 'react-icons/bi';
 
 export default function App() {
+
     return (
         <main className='my-4 bg-[#fdfdfd]'>
         <div className='max-w-[600px] mx-auto'>
@@ -30,7 +31,7 @@ export default function App() {
                 <IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
 
                 <h3>Button Counter</h3>
-                <Button className='mt-2' trailingVisual={<ButtonCounter>2</ButtonCounter>}>Search</Button>
+                <Button className='mt-2' trailingVisual={<Button.Counter>2</Button.Counter>}>Search</Button>
                 
                 <h2>TextInput</h2>
                 

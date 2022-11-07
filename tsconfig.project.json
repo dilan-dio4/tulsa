@@ -3,6 +3,9 @@
     "references": [
         {
             "path": "./packages/core/tsconfig.package.json",
+        },
+        {
+            "path": "./packages/dev/tsconfig.package.json",
         }
     ]
 }
