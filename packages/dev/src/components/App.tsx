@@ -74,6 +74,13 @@ export default function App() {
                     <FormControl.Caption>This is successful caption</FormControl.Caption>
                 </FormControl>
 
+                <FormControl status='success' className='mt-2'>
+                    <FormControl.Label>Enter a Description</FormControl.Label>
+                    <TextArea />
+                    <FormControl.Caption>This is successful caption</FormControl.Caption>
+                </FormControl>
+
+
                 <h2>Spinner</h2>
                 {(["sm", "md", "lg"] as const).map(size => (
                     <Spinner key={size} className='mt-2' size={size} />

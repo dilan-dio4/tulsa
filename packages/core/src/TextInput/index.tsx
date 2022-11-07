@@ -47,8 +47,8 @@ export function TextInput({
                     coreStyle,
                     "z-10 bg-white rounded-md shadow-sm",
                     "focus-within:ring-1 focus-within:border-indigo-500 focus-within:ring-indigo-500",
-                    "group-[.is-error]:text-red-500 focus-within:group-[.is-error]:border-red-500 focus-within:group-[.is-error]:ring-red-500",
-                    "group-[.is-success]:text-green-600 focus-within:group-[.is-success]:border-green-400 focus-within:group-[.is-success]:ring-green-400",
+                    "focus-within:group-[.is-error]:border-red-500 focus-within:group-[.is-error]:ring-red-500",
+                    "focus-within:group-[.is-success]:border-green-400 focus-within:group-[.is-success]:ring-green-400",
                     leadingVisual && "rounded-l-none",
                     trailingVisual && "rounded-r-none",
                 )}
