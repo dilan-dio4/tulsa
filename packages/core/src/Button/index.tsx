@@ -1,5 +1,5 @@
 import { flexCenter } from '../utilities';
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, HTMLAttributes } from "react";
+import React, { DetailedHTMLProps, ElementType, HTMLAttributes, ComponentPropsWithoutRef } from "react";
 import clsx from 'clsx';
 
 const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -19,21 +19,27 @@ function getColorScheme(variant: Variant) {
     }
 }
 
-export interface IButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface IButtonProps<T extends ElementType> {
     leadingVisual?: React.ReactElement;
+    leadingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     trailingVisual?: React.ReactElement;
+    trailingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     size?: "xs" | "sm" | "md" | "lg";
     variant?: Variant;
+    as?: T;
 }
 
-function _Button({ 
-    leadingVisual, 
-    trailingVisual, 
-    children, 
+function _Button<T extends ElementType = "button">({
+    leadingVisual,
+    leadingVisualProps,
+    trailingVisual,
+    trailingVisualProps,
+    children,
     size = "md",
     variant = "Primary",
-    ...props 
-}: IButtonProps) {
+    as,
+    ...props
+}: IButtonProps<T> & ComponentPropsWithoutRef<T>) {
 
     function getFontSize() {
         switch (size) {
@@ -65,16 +71,18 @@ function _Button({
         }
     }
 
+    const Component = as || "button";
+
     return (
-        <button
-            role="button"
+        <Component
+            role={Component === "button" ? "button" : undefined}
             {...props}
             className={clsx(flexCenter, rootButtonClassName, getFontSize(), getPadding(), getColorScheme(variant), props.className)}
         >
-            {leadingVisual && <span className={clsx(size === "lg" ? "mr-3" : size === "xs" ? "mr-0.5" : 'mr-1.5')}>{leadingVisual}</span>}
+            {leadingVisual && <span {...leadingVisualProps} className={clsx(size === "lg" ? "mr-3" : size === "xs" ? "mr-0.5" : 'mr-1.5', leadingVisualProps?.className)}>{leadingVisual}</span>}
             {children}
-            {trailingVisual && <span className={clsx(size === "lg" ? "ml-3" : size === "xs" ? "ml-0.5" : 'ml-1.5')}>{trailingVisual}</span>}
-        </button>
+            {trailingVisual && <span {...trailingVisualProps} className={clsx(size === "lg" ? "ml-3" : size === "xs" ? "ml-0.5" : 'ml-1.5', trailingVisualProps?.className)}>{trailingVisual}</span>}
+        </Component>
     )
 }
 
@@ -98,21 +106,23 @@ export const Button = Object.assign(_Button, {
     Counter
 })
 
-export interface IIconButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface IIconButtonProps<T extends ElementType> {
     icon: React.ReactElement;
     size?: "xs" | "sm" | "lg";
     circle?: boolean;
     variant?: Variant;
+    as?: T;
 }
 
 
-export function IconButton({ 
-    icon, 
+export function IconButton<T extends ElementType = "button">({
+    icon,
     size = "sm",
-    variant = "Primary", 
-    circle, 
-    ...props 
-}: IIconButtonProps) {
+    variant = "Primary",
+    circle,
+    as,
+    ...props
+}: IIconButtonProps<T> & ComponentPropsWithoutRef<T>) {
 
     function getRootHeight() {
         switch (size) {
@@ -140,9 +150,11 @@ export function IconButton({
         }
     }
 
+    const Component = as || "button";
+
     return (
-        <button
-            role="button"
+        <Component
+            role={Component === "button" ? "button" : undefined}
             {...props}
             className={clsx(flexCenter, rootButtonClassName, "!p-0", circle && "rounded-full", getColorScheme(variant), props.className)}
             style={{
@@ -155,6 +167,6 @@ export function IconButton({
             }}
         >
             {icon}
-        </button>
+        </Component>
     )
 }

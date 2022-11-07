@@ -1,35 +1,39 @@
 import clsx from "clsx";
-import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTMLAttributes, ReactText, Children } from "react";
+import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTMLAttributes, ElementType, ComponentPropsWithoutRef } from "react";
 import { nanoid } from 'nanoid'
 import FormControlContext from './Context';
 
-export interface IFormControl extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface IFormControl<T extends ElementType> {
     status?: "neutral" | "success" | "error";
     id?: string;
+    as?: T;
 }
 
-function _FormControl({
+function _FormControl<T extends ElementType = "div">({
     status = "neutral",
     id,
     children,
+    as,
     ...props
-}: IFormControl) {
+}: IFormControl<T> & ComponentPropsWithoutRef<T>) {
     const formId = useRef<string>(id || `form-control-${nanoid()}`);
-
+    const Component = as || "div";
     return (
         <FormControlContext.Provider
             value={{
                 formId: formId.current,
             }}
         >
-            <div className={clsx(
-                "flex flex-col",
-                status === "error" && "group is-error",
-                status === "success" && "group is-success",
-                props.className
-            )}>
+            <Component
+                className={clsx(
+                    "flex flex-col",
+                    status === "error" && "group is-error",
+                    status === "success" && "group is-success",
+                    props.className
+                )}
+            >
                 {children}
-            </div>
+            </Component>
         </FormControlContext.Provider>
     )
 }
@@ -42,11 +46,11 @@ function Label({ children, ...props }: ILabel) {
     const { formId } = useContext(FormControlContext);
 
     return (
-        <label 
-            htmlFor={formId} 
-            {...props} 
+        <label
+            htmlFor={formId}
+            {...props}
             className={clsx(
-                "text-sm font-semibold text-gray-700 mb-2", 
+                "text-sm font-semibold text-gray-700 mb-2",
                 "group-[.is-error]:text-red-500",
                 "group-[.is-success]:text-green-600",
                 props.className
@@ -66,7 +70,7 @@ function Caption({ children, ...props }: ICaption) {
         <span
             {...props}
             className={clsx(
-                "text-xs font-font text-gray-700 mt-1.5", 
+                "text-xs font-font text-gray-700 mt-1.5",
                 "group-[.is-error]:text-red-500",
                 "group-[.is-success]:text-green-600",
                 props.className
