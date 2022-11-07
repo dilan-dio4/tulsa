@@ -1,4 +1,4 @@
-import { Button, IconButton, TextInput, TextArea } from '../../../core/src';
+import { Button, IconButton, TextInput, TextArea, FormControl } from '../../../core/src';
 import { BiSearch } from 'react-icons/bi';
 
 export default function App() {
@@ -44,6 +44,29 @@ export default function App() {
 
                 <h2>TextArea</h2>
                 <TextArea placeholder='Enter Text' />
+
+                <h2>FormControl</h2>
+                
+                <h3>Simple</h3>
+                <FormControl>
+                    <FormControl.Label>Twitter Username</FormControl.Label>
+                    <TextInput leadingVisual={"@"} />
+                    <FormControl.Caption>This is a neutral caption</FormControl.Caption>
+                </FormControl>
+
+                <h3>Success & Error</h3>
+                <FormControl status='error' className='my-4'>
+                    <FormControl.Label>Twitter Username</FormControl.Label>
+                    <TextInput leadingVisual={"@"} />
+                    <FormControl.Caption>This is an errored caption</FormControl.Caption>
+                </FormControl>
+
+                <FormControl status='success'>
+                    <FormControl.Label>Twitter Username</FormControl.Label>
+                    <TextInput leadingVisual={"@"} />
+                    <FormControl.Caption>This is successful caption</FormControl.Caption>
+                </FormControl>
+
             </article>
         </div>
         </main>

@@ -3,7 +3,7 @@
       "jsx": "react-jsx",
       "noEmit": true,
       "esModuleInterop": true,
-      "lib": ["ES2015"]
+      "lib": ["ES2015", "DOM"]
     },
     "include": [
       "src/**/*.ts",
