@@ -1,4 +1,4 @@
-import { Button, IconButton, TextInput, TextArea, FormControl } from '../../../core/src';
+import { Button, IconButton, TextInput, TextArea, FormControl, Spinner } from '../../../core/src';
 import { BiSearch } from 'react-icons/bi';
 
 export default function App() {
@@ -66,6 +66,11 @@ export default function App() {
                     <TextInput leadingVisual={"@"} />
                     <FormControl.Caption>This is successful caption</FormControl.Caption>
                 </FormControl>
+
+                <h2>Spinner</h2>
+                {(["sm", "md", "lg"] as const).map(size => (
+                    <Spinner key={size} className='mt-2' size={size} />
+                ))}
 
             </article>
         </div>

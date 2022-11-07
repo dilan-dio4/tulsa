@@ -71,9 +71,9 @@ function _Button({
             {...props}
             className={clsx(flexCenter, rootButtonClassName, getFontSize(), getPadding(), getColorScheme(variant), props.className)}
         >
-            {leadingVisual && <span className={clsx(size === "lg" ? "mr-3" : 'mr-1.5')}>{leadingVisual}</span>}
+            {leadingVisual && <span className={clsx(size === "lg" ? "mr-3" : size === "xs" ? "mr-0.5" : 'mr-1.5')}>{leadingVisual}</span>}
             {children}
-            {trailingVisual && <span className={clsx(size === "lg" ? "ml-3" : 'ml-1.5')}>{trailingVisual}</span>}
+            {trailingVisual && <span className={clsx(size === "lg" ? "ml-3" : size === "xs" ? "ml-0.5" : 'ml-1.5')}>{trailingVisual}</span>}
         </button>
     )
 }
