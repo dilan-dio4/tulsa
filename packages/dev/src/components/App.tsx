@@ -46,6 +46,9 @@ export default function App() {
                 <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." />
                 <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingAddon={<BiChevronDown size={18} className='text-gray-400' />} />
 
+                <h3>Loading</h3>
+                <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." loading />
+
                 <h2>TextArea</h2>
                 <TextArea placeholder='Enter Text' />
 

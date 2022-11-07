@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React, { DetailedHTMLProps, HTMLAttributes, InputHTMLAttributes } from "react";
+import { Spinner } from '../Spinner';
 
 interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     leadingVisual?: string | React.ReactElement;
@@ -9,6 +10,7 @@ interface IInput extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>
     leadingAddon?: React.ReactElement;
     trailingAddon?: React.ReactElement;
     rootProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
+    loading?: boolean;
 }
 
 export function TextInput({ 
@@ -19,6 +21,7 @@ export function TextInput({
     rootProps, 
     leadingVisualProps, 
     trailingVisualProps, 
+    loading,
     ...props 
 }: IInput) {
     const coreStyle = "inline-flex items-center border border-gray-300 group-[.is-error]:border-red-300 group-[.is-success]:border-green-400 px-3";
@@ -60,6 +63,7 @@ export function TextInput({
                     {...props}
                 />
                 {trailingAddon && <span className="ml-2">{trailingAddon}</span>}
+                {loading && <span className="ml-2 text-gray-500"><Spinner /></span>}
             </span>
 
 
