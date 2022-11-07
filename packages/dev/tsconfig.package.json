@@ -1,0 +1,26 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "./build",
+		"rootDir": "./src",
+		"composite": true,
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"target": "ES5",
+		"jsx": "react-jsx"
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.js",
+		"src/**/*.tsx",
+		"src/**/*.jsx"
+	],
+	"exclude": [
+		"test",
+		"build"
+	],
+	"references": []
+}
