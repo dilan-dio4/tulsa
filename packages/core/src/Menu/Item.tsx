@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import React, { ComponentPropsWithoutRef, DetailedHTMLProps, HTMLAttributes } from "react";
+import React, { ComponentPropsWithoutRef, DetailedHTMLProps, ElementType, HTMLAttributes } from "react";
 
-export interface IItemProps extends ComponentPropsWithoutRef<"li"> {
+export interface IItemProps<T extends ElementType> {
     variant?: "default" | "dangerous" | "success";
     disabled?: boolean;
     selected?: boolean;
@@ -12,9 +12,10 @@ export interface IItemProps extends ComponentPropsWithoutRef<"li"> {
     trailingVisual?: string | React.ReactElement;
     trailingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
     description?: string;
+    as?: T;
 }
 
-export function Item({
+export function Item<T extends ElementType = "li">({
     variant = "default",
     disabled,
     selected,
@@ -25,8 +26,9 @@ export function Item({
     trailingVisual,
     trailingVisualProps,
     description,
+    as,
     ...props
-}: IItemProps) {
+}: IItemProps<T> & ComponentPropsWithoutRef<T>) {
 
     function getPseudoClassNames() {
         switch (variant) {
@@ -35,12 +37,14 @@ export function Item({
                     "hover:bg-gray-100",
                     "active:bg-gray-200",
                     "focus:bg-gray-200",
+                    "group-[.dropdown-active]:bg-gray-200",
                 ].join(" ");
             case "dangerous":
                 return [
                     "hover:bg-red-50",
                     "active:bg-red-100",
                     "focus:bg-red-100",
+                    "group-[.dropdown-active]:bg-red-100",
                 ].join(" ")
             default:
                 break;
@@ -79,13 +83,17 @@ export function Item({
         }
     }
 
+    const Component = as || "li";
+
     return (
-        <li
-            role={"listitem"}
-            tabIndex={0}
+        <Component
+            {...(Component === "li" ? {
+                role: "listitem",
+                tabIndex: 0
+            } : {})}
             {...props}
             className={clsx(
-                "flex flex-col w-full py-[6px] pl-2 pr-4 mx-2 rounded-md transition-colors duration-100 cursor-pointer",
+                "flex flex-col py-[6px] pl-2 pr-4 mx-2 rounded-md transition-colors duration-100 cursor-pointer",
                 getPseudoClassNames(),
                 selected && getSelectedClassNames(),
                 props.className,
@@ -99,6 +107,6 @@ export function Item({
                 {trailingVisual && <span {...trailingVisualProps} className={clsx("opacity-75", trailingVisualProps?.className)}>{trailingVisual}</span>}
             </div>
             {description && <span className={clsx("text-xs tracking-tight leading-tight text-gray-600 mr-[20px]", leadingVisual && "ml-[22px]")}>{description}</span>}
-        </li>
+        </Component>
     )
 }

@@ -19,6 +19,7 @@
         "react": "^18.2.0"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.4",
         "clsx": "^1.2.1",
         "nanoid": "^4.0.0"
     }

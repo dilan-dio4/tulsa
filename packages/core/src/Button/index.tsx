@@ -15,7 +15,7 @@ const rootButtonGroupHelpers = [
     "group-[.button-group]:rounded-none",
     "group-[.button-group]:first:rounded-l",
     "group-[.button-group]:last:rounded-r",
-    "group-[.button-group]:border-x-[0.5px]",
+    "-[.button-]:border-x-[0.5px]",
     "group-[.button-group]:first:border-l",
     "group-[.button-group]:last:border-r",
     "group-[.button-group]:ring-offset-0"

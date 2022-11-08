@@ -8,3 +8,4 @@ export * from './Select';
 export * from './Switch';
 export * from './ButtonGroup';
 export * from './Menu';
+export * from './Dropdown';
