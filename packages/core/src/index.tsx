@@ -7,3 +7,4 @@ export * from './ToggleBox';
 export * from './Select';
 export * from './Switch';
 export * from './ButtonGroup';
+export * from './Menu';

@@ -9,9 +9,19 @@ import {
     Radio,
     Select,
     Switch,
-    ButtonGroup
+    ButtonGroup,
+    Menu
 } from '../../../core/src';
-import { BiChevronDown, BiChevronRight, BiSearch } from 'react-icons/bi';
+import { 
+    BiChevronDown, 
+    BiChevronRight, 
+    BiSearch,
+    BiUser,
+    BiHelpCircle,
+    BiAlarm,
+    BiQuestionMark
+} from 'react-icons/bi';
+import Container from './Container';
 
 export default function App() {
 
@@ -22,167 +32,271 @@ export default function App() {
                     <h1>Tulsa</h1>
                     <h2>Button</h2>
                     <h3>Sizes</h3>
-                    {(["xs", "sm", "md", "lg"] as const).map(size => (
-                        <Button key={size} className='mt-2' size={size} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-                    ))}
+
+                    <Container>
+                        {(["xs", "sm", "md", "lg"] as const).map(size => (
+                            <Button key={size} className='mt-2' size={size} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
+                        ))}
+                    </Container>
+
                     <h3>Variants</h3>
-                    {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
-                        <Button key={variant} className='mt-2' variant={variant} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
-                    ))}
+
+                    <Container>
+                        {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
+                            <Button key={variant} className='mt-2' variant={variant} leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Search</Button>
+                        ))}
+                    </Container>
 
                     <h3>As <em>a</em> component</h3>
-                    <Button className='mt-2' as="a" href="/" leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>This is a link</Button>
+
+                    <Container>
+                        <Button className='mt-2' as="a" href="/" leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>This is a link</Button>
+                    </Container>
 
                     <h3>Display Button</h3>
-                    <Button
-                        className='mt-2 w-full'
-                        leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}
-                        trailingVisual={
-                            <BiChevronRight 
-                                size={"1.4em"}
-                                color="inherit"
-                                className='ml-auto'
-                            />
-                        }
-                        trailingVisualProps={{ className: "ml-auto" }}
-                    >
-                        Next Page
-                    </Button>
+
+                    <Container>
+                        <Button
+                            className='mt-2 w-full'
+                            leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}
+                            trailingVisual={
+                                <BiChevronRight
+                                    size={"1.4em"}
+                                    color="inherit"
+                                    className='ml-auto'
+                                />
+                            }
+                            trailingVisualProps={{ className: "ml-auto" }}
+                        >
+                            Next Page
+                        </Button>
+                    </Container>
 
                     <h2>IconButton</h2>
                     <h3>Sizes</h3>
-                    {(["xs", "sm", "lg"] as const).map(size => (
-                        <IconButton className='mt-2' key={size} size={size} icon={<BiSearch size={"1em"} color="inherit" />} />
-                    ))}
+
+                    <Container>
+                        {(["xs", "sm", "lg"] as const).map(size => (
+                            <IconButton className='mt-2' key={size} size={size} icon={<BiSearch size={"1em"} color="inherit" />} />
+                        ))}
+                    </Container>
+
                     <h3>Variants</h3>
-                    {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
-                        <IconButton className='mt-2' key={variant} variant={variant} icon={<BiSearch size={"1em"} color="inherit" />} />
-                    ))}
+
+                    <Container>
+                        {(["Primary", "Secondary", "Invisible"] as const).map(variant => (
+                            <IconButton className='mt-2' key={variant} variant={variant} icon={<BiSearch size={"1em"} color="inherit" />} />
+                        ))}
+                    </Container>
+
                     <h3>Circle</h3>
-                    <IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
+
+                    <Container>
+                        <IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
+                    </Container>
 
                     <h3>Button Counter</h3>
-                    <Button className='mt-2' trailingVisual={<Button.Counter>2</Button.Counter>}>Search</Button>
+
+                    <Container>
+                        <Button className='mt-2' trailingVisual={<Button.Counter>2</Button.Counter>}>Search</Button>
+                    </Container>
+
 
                     <h2>TextInput</h2>
 
                     <h3>Base</h3>
-                    <TextInput placeholder='Enter Text' />
+
+                    <Container>
+                        <TextInput placeholder='Enter Text' />
+                    </Container>
 
                     <h3>Visuals</h3>
-                    <TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
-                    <TextInput placeholder='Enter Text' leadingVisual={"$"} rootProps={{ className: "mt-4" }} />
+
+                    <Container>
+                        <TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
+                        <TextInput placeholder='Enter Text' leadingVisual={"$"} rootProps={{ className: "mt-4" }} />
+                    </Container>
 
                     <h3>Addons</h3>
-                    <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." />
-                    <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingAddon={<BiChevronDown size={18} className='text-gray-400' />} />
+
+                    <Container>
+                        <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." />
+                        <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingAddon={<BiChevronDown size={18} className='text-gray-400' />} />
+                    </Container>
 
                     <h3>Loading</h3>
-                    <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." loading />
+
+                    <Container>
+                        <TextInput rootProps={{ className: "mt-2" }} placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." loading />
+                    </Container>
 
                     <h2>TextArea</h2>
-                    <TextArea placeholder='Enter Text' />
+
+                    <Container>
+                        <TextArea placeholder='Enter Text' />
+                    </Container>
 
                     <h2>FormControl</h2>
 
                     <h3>Simple</h3>
-                    <FormControl>
-                        <FormControl.Label>Twitter Username</FormControl.Label>
-                        <TextInput leadingVisual={"@"} />
-                        <FormControl.Caption>This is a neutral caption</FormControl.Caption>
-                    </FormControl>
-
+                    <Container>
+                        <FormControl>
+                            <FormControl.Label>Twitter Username</FormControl.Label>
+                            <TextInput leadingVisual={"@"} />
+                            <FormControl.Caption>This is a neutral caption</FormControl.Caption>
+                        </FormControl>
+                    </Container>
                     <h3>Success & Error</h3>
-                    <FormControl status='error' className='my-4'>
-                        <FormControl.Label>Twitter Username</FormControl.Label>
-                        <TextInput leadingVisual={"@"} />
-                        <FormControl.Caption>This is an errored caption</FormControl.Caption>
-                    </FormControl>
 
-                    <FormControl status='success'>
-                        <FormControl.Label>Twitter Username</FormControl.Label>
-                        <TextInput leadingVisual={"@"} />
-                        <FormControl.Caption>This is successful caption</FormControl.Caption>
-                    </FormControl>
+                    <Container>
+                        <FormControl status='error' className='my-4'>
+                            <FormControl.Label>Twitter Username</FormControl.Label>
+                            <TextInput leadingVisual={"@"} />
+                            <FormControl.Caption>This is an errored caption</FormControl.Caption>
+                        </FormControl>
 
-                    <FormControl status='success' className='mt-2'>
-                        <FormControl.Label>Enter a Description</FormControl.Label>
-                        <TextArea />
-                        <FormControl.Caption>This is successful caption</FormControl.Caption>
-                    </FormControl>
+                        <FormControl status='success'>
+                            <FormControl.Label>Twitter Username</FormControl.Label>
+                            <TextInput leadingVisual={"@"} />
+                            <FormControl.Caption>This is successful caption</FormControl.Caption>
+                        </FormControl>
+
+                        <FormControl status='success' className='mt-2'>
+                            <FormControl.Label>Enter a Description</FormControl.Label>
+                            <TextArea />
+                            <FormControl.Caption>This is successful caption</FormControl.Caption>
+                        </FormControl>
+                    </Container>
 
 
                     <h2>Spinner</h2>
-                    {(["sm", "md", "lg"] as const).map(size => (
-                        <Spinner key={size} className='mt-2' size={size} />
-                    ))}
 
+                    <Container>
+                        {(["sm", "md", "lg"] as const).map(size => (
+                            <Spinner key={size} className='mt-2' size={size} />
+                        ))}
+                    </Container>
                     <h2>Checkbox</h2>
-                    <Checkbox className='mt-2' />
-                    <Checkbox className='mt-2' label='With a label' />
-                    <Checkbox className='mt-2' label='Disabled' disabled />
+
+                    <Container>
+                        <Checkbox className='mt-2' />
+                        <Checkbox className='mt-2' label='With a label' />
+                        <Checkbox className='mt-2' label='Disabled' disabled />
+                    </Container>
 
                     <h2>Radio</h2>
-                    <Radio className='mt-2' />
-                    <Radio className='mt-2' label='With a label' />
-                    <Radio className='mt-2' label='Disabled' disabled />
+
+                    <Container>
+                        <Radio className='mt-2' />
+                        <Radio className='mt-2' label='With a label' />
+                        <Radio className='mt-2' label='Disabled' disabled />
+                    </Container>
 
                     <h2>Select</h2>
-                    <Select required>
-                        <Select.Option value={"Hello"}>Hello</Select.Option>
-                        <Select.Option value={"World"}>World</Select.Option>
-                    </Select>
+
+                    <Container>
+                        <Select required>
+                            <Select.Option value={"Hello"}>Hello</Select.Option>
+                            <Select.Option value={"World"}>World</Select.Option>
+                        </Select>
+                    </Container>
 
                     <h3>Placeholder</h3>
-                    <Select placeholder='Placeholder'>
-                        <Select.Option value={"Hello"}>Hello</Select.Option>
-                        <Select.Option value={"World"}>World</Select.Option>
-                    </Select>
+
+                    <Container>
+                        <Select placeholder='Placeholder'>
+                            <Select.Option value={"Hello"}>Hello</Select.Option>
+                            <Select.Option value={"World"}>World</Select.Option>
+                        </Select>
+                    </Container>
 
                     <h3>Disabled</h3>
-                    <Select
-                        placeholder='Placeholder'
-                        disabled
-                    >
-                        <Select.Option value={"Hello"}>Hello</Select.Option>
-                        <Select.Option value={"World"}>World</Select.Option>
-                    </Select>
+
+                    <Container>
+                        <Select
+                            placeholder='Placeholder'
+                            disabled
+                        >
+                            <Select.Option value={"Hello"}>Hello</Select.Option>
+                            <Select.Option value={"World"}>World</Select.Option>
+                        </Select>
+                    </Container>
 
                     <h3>Option Groups</h3>
-                    <Select
-                        placeholder='Placeholder'
-                    >
-                        <Select.OptGroup label="Group 1">
-                            <Select.Option value={"Hello"}>Hello</Select.Option>
-                            <Select.Option value={"World"}>World</Select.Option>
-                        </Select.OptGroup>
-                        <Select.OptGroup label="Group 2">
-                            <Select.Option value={"Hello"}>Hello</Select.Option>
-                            <Select.Option value={"World"}>World</Select.Option>
-                        </Select.OptGroup>
-                    </Select>
+
+                    <Container>
+                        <Select
+                            placeholder='Placeholder'
+                        >
+                            <Select.OptGroup label="Group 1">
+                                <Select.Option value={"Hello"}>Hello</Select.Option>
+                                <Select.Option value={"World"}>World</Select.Option>
+                            </Select.OptGroup>
+                            <Select.OptGroup label="Group 2">
+                                <Select.Option value={"Hello"}>Hello</Select.Option>
+                                <Select.Option value={"World"}>World</Select.Option>
+                            </Select.OptGroup>
+                        </Select>
+                    </Container>
 
                     <h2>Switch</h2>
-                    <div className='my-2'><Switch /></div>
-                    <div className='my-2'><Switch label={"With a label"} /></div>
 
+                    <Container>
+                        <div className='my-2'><Switch /></div>
+                        <div className='my-2'><Switch label={"With a label"} /></div>
+                    </Container>
                     <h3>Sizes</h3>
-                    {(["sm", "md", "lg"] as const).map(size => (
-                        <div className='my-2' key={size}><Switch size={size} label={size} /></div>
-                    ))}
 
+                    <Container>
+                        {(["sm", "md", "lg"] as const).map(size => (
+                            <div className='my-2' key={size}><Switch size={size} label={size} /></div>
+                        ))}
+                    </Container>
                     <h2>Button Group</h2>
-                    <ButtonGroup>
-                        <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
-                        <Button selected leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Selected</Button>
-                        <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
-                    </ButtonGroup>
-                    <h3>Icon Buttons</h3>
-                    <ButtonGroup>
-                        <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
-                        <IconButton selected className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
-                        <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
-                    </ButtonGroup>
+
+                    <Container>
+                        <ButtonGroup>
+                            <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
+                            <Button selected leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Selected</Button>
+                            <Button leadingVisual={<BiSearch size={"1.1em"} color="inherit" />}>Unselected</Button>
+                        </ButtonGroup>
+                        <h3>Icon Buttons</h3>
+                        <ButtonGroup>
+                            <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                            <IconButton selected className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                            <IconButton className='mt-2' icon={<BiSearch size={"1em"} color="inherit" />} />
+                        </ButtonGroup>
+                    </Container>
+
+                    <h2>Menu</h2>
+
+                    <Container>
+                        <Menu>
+                            <Menu.Item
+                                leadingVisual={<BiUser color='inherit' fontSize={"1.1em"} />}
+                                trailingVisual={"⌘ + P"}
+                            >
+                                Your Profile
+                            </Menu.Item>
+                            <Menu.Item
+                                leadingVisual={<BiAlarm color='inherit' fontSize={"1.1em"} />}
+                                trailingVisual={"⌘ + S"}
+                            >
+                                Account Settings
+                            </Menu.Item>
+                            <Menu.Divider isRowDivider />
+                            <Menu.Item
+                                description='This is a string of text that will help the user decide which action to take.'
+                                leadingVisual={<BiQuestionMark color='inherit' fontSize={"1.1em"} />}
+                                trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}
+                            >
+                                Support
+                            </Menu.Item>
+                            <Menu.Item variant='dangerous' selected trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}>Refer a Friend</Menu.Item>
+                            <Menu.Divider />
+                            <Menu.Item variant='dangerous'>Sign Out</Menu.Item>
+                        </Menu>
+                    </Container>
                 </article>
             </div>
         </main>
