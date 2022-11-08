@@ -16,6 +16,17 @@ const ToggleBox = (type: "radio" | "checkbox") => ({ id, label, labelProps, ...p
         :
         "checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9JyNmZmYnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nOCcgY3k9JzgnIHI9JzMnLz48L3N2Zz4=')]"
 
+    const rootPseudoClassNames = [
+        "focus:ring-2", 
+        "focus:ring-offset-2",
+        "focus:ring-indigo-500",
+        "active:ring-2", 
+        "active:ring-offset-2",
+        "active:ring-indigo-500",
+        "checked:bg-indigo-600",
+        "checked:ring-indigo-600"
+    ].join(" ");
+
     return (
         <span className={clsx("flex items-center", props.className)}>
             <input
@@ -23,11 +34,11 @@ const ToggleBox = (type: "radio" | "checkbox") => ({ id, label, labelProps, ...p
                 type={type}
                 {...props}
                 className={clsx(
-                    "appearance-none w-4 h-4 ring-1 focus:ring-2 focus:ring-offset-2",
-                    "bg-gray-100 ring-gray-300 focus:ring-indigo-500",
+                    "appearance-none w-4 h-4 ring-1",
+                    "bg-gray-100 ring-gray-300",
+                    rootPseudoClassNames,
                     checkedEle,
                     type === "checkbox" ? "rounded" : "rounded-full",
-                    "checked:bg-indigo-600 checked:ring-indigo-600"
                 )}
             />
             {label && (
@@ -35,7 +46,7 @@ const ToggleBox = (type: "radio" | "checkbox") => ({ id, label, labelProps, ...p
                     htmlFor={formId.current}
                     {...labelProps}
                     className={clsx(
-                        "ml-2 text-sm font-semibold",
+                        "ml-3 text-sm font-semibold",
                         props.disabled ? "text-gray-500" : "text-gray-700",
                         labelProps?.className,
                     )}

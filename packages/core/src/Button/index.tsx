@@ -2,19 +2,66 @@ import { flexCenter } from '../utilities';
 import React, { DetailedHTMLProps, ElementType, HTMLAttributes, ComponentPropsWithoutRef } from "react";
 import clsx from 'clsx';
 
-const rootButtonClassName = "rounded-md border text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:z-10";
-const rootButtonGroupHelper = "group-[.button-group]:rounded-none group-[.button-group]:first:rounded-l group-[.button-group]:last:rounded-r group-[.button-group]:border-x-[0.5px] group-[.button-group]:first:border-l group-[.button-group]:last:border-r group-[.button-group]:ring-offset-0";
+const rootPseudoSelectors = [
+    "focus:ring-2",
+    "focus:ring-offset-2",
+    "focus:z-10",
+    "active:ring-2",
+    "active:ring-offset-2",
+    "active:z-10"
+].join(" ");
+
+const rootButtonGroupHelpers = [
+    "group-[.button-group]:rounded-none",
+    "group-[.button-group]:first:rounded-l",
+    "group-[.button-group]:last:rounded-r",
+    "group-[.button-group]:border-x-[0.5px]",
+    "group-[.button-group]:first:border-l",
+    "group-[.button-group]:last:border-r",
+    "group-[.button-group]:ring-offset-0"
+].join(" ");
+
+const rootButtonClassNames = "outline-none rounded-md border text-sm font-medium shadow-sm " + rootButtonGroupHelpers + " " + rootPseudoSelectors;
 
 export type Variant = "Primary" | "Secondary" | "Invisible";
 
 function getColorScheme(variant: Variant) {
     switch (variant) {
         case "Primary":
-            return "text-gray-700 border-gray-300 bg-white hover:bg-gray-50 focus:ring-indigo-500 focus:ring-offset-gray-100";
+            return [
+                "text-gray-700",
+                "border-gray-300",
+                "bg-white",
+                "hover:bg-gray-50",
+                "focus:ring-indigo-500",
+                "focus:ring-offset-gray-100",
+                "active:ring-indigo-500",
+                "active:ring-offset-gray-100",
+            ].join(" ");
         case "Secondary":
-            return "text-white border-transparent bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-gray-100";
+            return [
+                "text-white", 
+                "border-transparent", 
+                "bg-indigo-600", 
+                "hover:bg-indigo-700", 
+                "focus:ring-indigo-500", 
+                "focus:ring-offset-gray-100",
+                "active:ring-indigo-500", 
+                "active:ring-offset-gray-100"
+            ].join(" ");
         case "Invisible":
-            return "font-bold text-indigo-500 border-transparent bg-transparent shadow-none hover:bg-gray-100 focus:ring-indigo-500 focus:ring-offset-gray-100";
+            return [
+                "font-bold", 
+                "text-indigo-500", 
+                "border-transparent", 
+                "bg-transparent", 
+                "shadow-none", 
+                "hover:bg-gray-100", 
+                "focus:ring-indigo-500", 
+                "focus:ring-offset-gray-100",
+                "active:ring-indigo-500", 
+                "active:ring-offset-gray-100"
+            ].join(" ");
         default:
             break;
     }
@@ -82,8 +129,7 @@ function _Button<T extends ElementType = "button">({
             {...props}
             className={clsx(
                 flexCenter,
-                rootButtonClassName,
-                rootButtonGroupHelper,
+                rootButtonClassNames,
                 getFontSize(),
                 getPadding(),
                 getColorScheme(variant),
@@ -172,8 +218,7 @@ export function IconButton<T extends ElementType = "button">({
             {...props}
             className={clsx(
                 flexCenter,
-                rootButtonClassName,
-                rootButtonGroupHelper,
+                rootButtonClassNames,
                 "!p-0",
                 circle && "rounded-full",
                 getColorScheme(variant),
