@@ -1,0 +1,96 @@
+---
+sidebar_position: 10
+title: Select
+---
+import { Select } from '../../core/src';
+import Container from '../src/components/Container';
+
+<Container
+    components={<>
+        <Select required>
+            <Select.Option value={"Hello"}>Hello</Select.Option>
+            <Select.Option value={"World"}>World</Select.Option>
+        </Select>
+    </>}
+>
+
+```jsx
+<Select required>
+    <Select.Option value={"Hello"}>Hello</Select.Option>
+    <Select.Option value={"World"}>World</Select.Option>
+</Select>
+```
+
+</Container>
+
+### Placeholder
+
+<Container
+    components={<>
+        <Select placeholder='Placeholder'>
+            <Select.Option value={"Hello"}>Hello</Select.Option>
+            <Select.Option value={"World"}>World</Select.Option>
+        </Select>
+    </>}
+>
+
+```jsx
+<Select placeholder='Placeholder'>
+    <Select.Option value={"Hello"}>Hello</Select.Option>
+    <Select.Option value={"World"}>World</Select.Option>
+</Select>
+```
+
+</Container>
+
+### Disabled
+
+<Container
+    components={<>
+        <Select disabled>
+            <Select.Option value={"Hello"}>Hello</Select.Option>
+            <Select.Option value={"World"}>World</Select.Option>
+        </Select>
+    </>}
+>
+
+```jsx
+<Select disabled>
+    <Select.Option value={"Hello"}>Hello</Select.Option>
+    <Select.Option value={"World"}>World</Select.Option>
+</Select>
+```
+
+</Container>
+
+### Option Groups
+
+<Container
+    components={<>
+        <Select placeholder='Placeholder'>
+            <Select.OptGroup label="Group 1">
+                <Select.Option value={"Hello"}>Hello</Select.Option>
+                <Select.Option value={"World"}>World</Select.Option>
+            </Select.OptGroup>
+            <Select.OptGroup label="Group 2">
+                <Select.Option value={"Hello"}>Hello</Select.Option>
+                <Select.Option value={"World"}>World</Select.Option>
+            </Select.OptGroup>
+        </Select>
+    </>}
+>
+
+```jsx
+<Select placeholder='Placeholder'>
+    <Select.OptGroup label="Group 1">
+        <Select.Option value={"Hello"}>Hello</Select.Option>
+        <Select.Option value={"World"}>World</Select.Option>
+    </Select.OptGroup>
+    <Select.OptGroup label="Group 2">
+        <Select.Option value={"Hello"}>Hello</Select.Option>
+        <Select.Option value={"World"}>World</Select.Option>
+    </Select.OptGroup>
+</Select>
+```
+
+</Container>

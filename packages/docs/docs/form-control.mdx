@@ -1,0 +1,70 @@
+---
+sidebar_position: 6
+title: FormControl
+---
+import { TextArea, FormControl, TextInput } from '../../core/src';
+import Container from '../src/components/Container';
+
+<Container
+    components={<>
+        <FormControl>
+            <FormControl.Label>Twitter Username</FormControl.Label>
+            <TextInput leadingVisual={"@"} />
+            <FormControl.Caption>This is a neutral caption</FormControl.Caption>
+        </FormControl>
+    </>}
+>
+
+```jsx
+<FormControl>
+    <FormControl.Label>Twitter Username</FormControl.Label>
+    <TextInput leadingVisual={"@"} />
+    <FormControl.Caption>This is a neutral caption</FormControl.Caption>
+</FormControl>
+```
+
+</Container>
+
+### Success and Error
+
+<Container
+    components={<>
+        <FormControl status='error'>
+            <FormControl.Label>Twitter Username</FormControl.Label>
+            <TextInput leadingVisual={"@"} />
+            <FormControl.Caption>This is an errored caption</FormControl.Caption>
+        </FormControl>
+        <FormControl status='success'>
+            <FormControl.Label>Twitter Username</FormControl.Label>
+            <TextInput leadingVisual={"@"} />
+            <FormControl.Caption>This is successful caption</FormControl.Caption>
+        </FormControl>
+        <FormControl status='success' className='mt-2'>
+        <FormControl.Label>Enter a Description</FormControl.Label>
+            <TextArea />
+            <FormControl.Caption>This is successful caption</FormControl.Caption>
+        </FormControl>
+    </>}
+>
+
+```jsx
+<FormControl status='error'>
+    <FormControl.Label>Twitter Username</FormControl.Label>
+    <TextInput leadingVisual={"@"} />
+    <FormControl.Caption>This is an errored caption</FormControl.Caption>
+</FormControl>
+
+<FormControl status='success'>
+    <FormControl.Label>Twitter Username</FormControl.Label>
+    <TextInput leadingVisual={"@"} />
+    <FormControl.Caption>This is successful caption</FormControl.Caption>
+</FormControl>
+
+<FormControl status='success'>
+    <FormControl.Label>Enter a Description</FormControl.Label>
+    <TextArea />
+    <FormControl.Caption>This is successful caption</FormControl.Caption>
+</FormControl>
+```
+
+</Container>

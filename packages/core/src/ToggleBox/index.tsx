@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { nanoid } from "nanoid";
-import { DetailedHTMLProps, InputHTMLAttributes, LabelHTMLAttributes, useRef } from "react";
+import React, { DetailedHTMLProps, InputHTMLAttributes, LabelHTMLAttributes, useRef } from "react";
 
 export interface IToggleBox extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, "size"> {
     id?: string;

@@ -12,13 +12,14 @@ const rootPseudoSelectors = [
 ].join(" ");
 
 const rootButtonGroupHelpers = [
-    "group-[.button-group]:rounded-none",
-    "group-[.button-group]:first:rounded-l",
-    "group-[.button-group]:last:rounded-r",
-    "-[.button-]:border-x-[0.5px]",
-    "group-[.button-group]:first:border-l",
-    "group-[.button-group]:last:border-r",
-    "group-[.button-group]:ring-offset-0"
+    "group-[.tulsa-button-group]:rounded-none",
+    "group-[.tulsa-button-group]:first:rounded-l",
+    "group-[.tulsa-button-group]:last:rounded-r",
+    "group-[.tulsa-button-group]:border-x-[0.5px]",
+    "group-[.tulsa-button-group]:first:border-l",
+    "group-[.tulsa-button-group]:last:border-r",
+    "group-[.tulsa-button-group]:ring-offset-0",
+    "group-[.tulsa-button-group]:shadow-none"
 ].join(" ");
 
 const rootButtonClassNames = "outline-none rounded-md border text-sm font-medium shadow-sm " + rootButtonGroupHelpers + " " + rootPseudoSelectors;

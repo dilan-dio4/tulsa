@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { DetailedHTMLProps, FC, HTMLProps, PropsWithChildren, SelectHTMLAttributes } from 'react';
+import React, { DetailedHTMLProps, FC, HTMLProps, PropsWithChildren, SelectHTMLAttributes } from 'react';
 import { Button, IButtonProps } from '../Button';
 
 interface ISelect extends Omit<DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>, "size"> {

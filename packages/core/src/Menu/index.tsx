@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { ComponentPropsWithoutRef, forwardRef } from "react"
+import React, { ComponentPropsWithoutRef, forwardRef } from "react"
 import { Item } from "./Item"
 import { Divider } from "./Divider"
 

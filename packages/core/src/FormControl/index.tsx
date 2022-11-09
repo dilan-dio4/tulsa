@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTMLAttributes, ElementType, ComponentPropsWithoutRef } from "react";
 import { nanoid } from 'nanoid'
 import FormControlContext from './Context';
+import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTMLAttributes, ElementType, ComponentPropsWithoutRef } from "react";
 
 export interface IFormControl<T extends ElementType> {
     status?: "neutral" | "success" | "error";

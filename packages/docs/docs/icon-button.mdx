@@ -1,0 +1,57 @@
+---
+sidebar_position: 3
+title: IconButton
+---
+import { IconButton } from '../../core/src';
+import Container from '../src/components/Container';
+import { BiSearch, BiChevronRight } from 'react-icons/bi';
+
+<Container
+    components={<>
+        <IconButton variant={"Primary"} icon={<BiSearch size={"1em"} color="inherit" />} />
+        <IconButton variant={"Secondary"} icon={<BiSearch size={"1em"} color="inherit" />} />
+        <IconButton variant={"Invisible"} icon={<BiSearch size={"1em"} color="inherit" />} />
+    </>}
+>
+
+```jsx
+<IconButton variant={"Primary"} icon={<BiSearch size={"1em"} color="inherit" />} />
+<IconButton variant={"Secondary"} icon={<BiSearch size={"1em"} color="inherit" />} />
+<IconButton variant={"Invisible"} icon={<BiSearch size={"1em"} color="inherit" />} />
+```
+
+</Container>
+
+### Circle
+
+<Container
+    components={<>
+        <IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
+    </>}
+>
+
+```jsx
+<IconButton circle icon={<BiSearch size={"1em"} color="inherit" />} />
+```
+
+</Container>
+
+### Sizes
+
+<Container
+    components={(
+        <>
+            <IconButton size={"xs"} icon={<BiSearch size={"1em"} color="inherit" />} />
+            <IconButton size={"sm"} icon={<BiSearch size={"1em"} color="inherit" />} />
+            <IconButton size={"lg"} icon={<BiSearch size={"1em"} color="inherit" />} />
+        </>
+    )}
+>
+
+```jsx
+<IconButton size={"xs"} icon={<BiSearch size={"1em"} color="inherit" />} />
+<IconButton size={"sm"} icon={<BiSearch size={"1em"} color="inherit" />} />
+<IconButton size={"lg"} icon={<BiSearch size={"1em"} color="inherit" />} />
+```
+
+</Container>

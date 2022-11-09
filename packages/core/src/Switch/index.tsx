@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { nanoid } from "nanoid";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import type { IToggleBox } from '../ToggleBox';
 // Related to ToggleBox
 

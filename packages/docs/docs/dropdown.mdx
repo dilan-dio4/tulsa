@@ -1,0 +1,110 @@
+---
+sidebar_position: 14
+title: Dropdown
+---
+import { Menu, Dropdown } from '../../core/src';
+import Container from '../src/components/Container';
+import { BiSearch, BiChevronRight, BiAlarm, BiUser, BiQuestionMark } from 'react-icons/bi';
+
+<Container
+    components={<>
+        <Dropdown label='Choose an option'>
+            <Menu.Item
+                leadingVisual={<BiUser color='inherit' fontSize={"1.1em"} />}
+                trailingVisual={"⌘ + P"}
+                as="div"
+            >
+                Your Profile
+            </Menu.Item>
+            <Menu.Item
+                leadingVisual={<BiAlarm color='inherit' fontSize={"1.1em"} />}
+                trailingVisual={"⌘ + S"}
+                as="div"
+            >
+                Account Settings
+            </Menu.Item>
+            <Menu.Divider isRowDivider />
+            <Menu.Item as="div" variant='dangerous' selected trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}>Refer a Friend</Menu.Item>
+            <Menu.Divider />
+            <Menu.Item as="div" variant='dangerous'>Sign Out</Menu.Item>
+        </Dropdown>
+    </>}
+>
+
+```jsx
+<Dropdown label='Choose an option'>
+    <Menu.Item
+        leadingVisual={<BiUser color='inherit' fontSize={"1.1em"} />}
+        trailingVisual={"⌘ + P"}
+        as="div"
+    >
+        Your Profile
+    </Menu.Item>
+    <Menu.Item
+        leadingVisual={<BiAlarm color='inherit' fontSize={"1.1em"} />}
+        trailingVisual={"⌘ + S"}
+        as="div"
+    >
+        Account Settings
+    </Menu.Item>
+    <Menu.Divider isRowDivider />
+    <Menu.Item as="div" variant='dangerous' selected trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}>Refer a Friend</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item as="div" variant='dangerous'>Sign Out</Menu.Item>
+</Dropdown>
+```
+
+</Container>
+
+
+### Dropdown above
+
+<Container
+    components={<>
+        <Dropdown label='Choose an option' justify='left' align='top'>
+            <Menu.Item
+                leadingVisual={<BiUser color='inherit' fontSize={"1.1em"} />}
+                trailingVisual={"⌘ + P"}
+                as="div"
+            >
+                Your Profile
+            </Menu.Item>
+            <Menu.Item
+                leadingVisual={<BiAlarm color='inherit' fontSize={"1.1em"} />}
+                trailingVisual={"⌘ + S"}
+                as="div"
+            >
+                Account Settings
+            </Menu.Item>
+            <Menu.Divider isRowDivider />
+            <Menu.Item as="div" variant='dangerous' selected trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}>Refer a Friend</Menu.Item>
+            <Menu.Divider />
+            <Menu.Item as="div" variant='dangerous'>Sign Out</Menu.Item>
+        </Dropdown>
+    </>}
+>
+
+```jsx
+<Dropdown label='Choose an option' justify='left' align='top'>
+    <Menu.Item
+        leadingVisual={<BiUser color='inherit' fontSize={"1.1em"} />}
+        trailingVisual={"⌘ + P"}
+        as="div"
+    >
+        Your Profile
+    </Menu.Item>
+    <Menu.Item
+        leadingVisual={<BiAlarm color='inherit' fontSize={"1.1em"} />}
+        trailingVisual={"⌘ + S"}
+        as="div"
+    >
+        Account Settings
+    </Menu.Item>
+    <Menu.Divider isRowDivider />
+    <Menu.Item as="div" variant='dangerous' selected trailingVisual={<BiChevronRight color='inherit' fontSize={"1.2em"} />}>Refer a Friend</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item as="div" variant='dangerous'>Sign Out</Menu.Item>
+</Dropdown>
+```
+
+</Container>

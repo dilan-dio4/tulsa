@@ -1,0 +1,65 @@
+---
+sidebar_position: 4
+title: TextInput
+---
+import { TextInput } from '../../core/src';
+import Container from '../src/components/Container';
+import { BiSearch, BiChevronRight, BiChevronDown } from 'react-icons/bi';
+
+<Container
+    components={<>
+        <TextInput placeholder='Enter Text' />
+    </>}
+>
+
+```jsx
+<TextInput placeholder='Enter Text' />
+```
+
+</Container>
+
+### Visuals
+
+<Container
+    components={<>
+        <TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
+        <TextInput placeholder='Enter Text' leadingVisual={"$"} />
+    </>}
+>
+
+```jsx
+<TextInput placeholder='Enter Text' leadingVisual={"$"} trailingVisual="per mi." />
+<TextInput placeholder='Enter Text' leadingVisual={"$"} />
+```
+
+</Container>
+
+### Addons
+
+<Container
+    components={<>
+        <TextInput placeholder='Search' leadingAddon={<BiSearch style={{ color: "rgb(156 163 175 / 1)" }} />} trailingVisual="per mi." />
+        <TextInput placeholder='Search' leadingAddon={<BiSearch style={{ color: "rgb(156 163 175 / 1)" }} />} trailingAddon={<BiChevronDown size={18} style={{ color: "rgb(156 163 175 / 1)" }} />} />
+    </>}
+>
+
+```jsx
+<TextInput placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." />
+<TextInput placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingAddon={<BiChevronDown size={18} className='text-gray-400' />} />
+```
+
+</Container>
+
+### Loading
+
+<Container
+    components={<>
+        <TextInput placeholder='Search' leadingAddon={<BiSearch  />} trailingVisual="per mi." loading />
+    </>}
+>
+
+```jsx
+<TextInput placeholder='Search' leadingAddon={<BiSearch className='text-gray-400' />} trailingVisual="per mi." loading />
+```
+
+</Container>

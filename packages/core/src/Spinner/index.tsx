@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { SVGProps } from "react";
+import type { SVGProps } from "react";
+import React from 'react'; // Needed
 
 export interface ISpinner extends SVGProps<SVGSVGElement> {
     size?: "sm" | "md" | "lg";

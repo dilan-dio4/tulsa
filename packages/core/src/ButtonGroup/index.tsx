@@ -5,7 +5,7 @@ export function ButtonGroup({ ...props }: ComponentPropsWithoutRef<"div">) {
     return (
         <div
             {...props}
-            className={clsx("flex group button-group", props.className)}
+            className={clsx("flex group tulsa-button-group", props.className)}
         />
     )
 }

@@ -1,0 +1,43 @@
+---
+sidebar_position: 11
+title: Switch
+---
+import { Switch } from '../../core/src';
+import Container from '../src/components/Container';
+
+<Container
+    vertical
+    components={<>
+        <Switch />
+        <Switch label={"With a label"} />
+        <Switch disabled label={"Disabled"} />
+    </>}
+>
+
+```jsx
+<Switch />
+<Switch label={"With a label"} />
+<Switch disabled label={"Disabled"} />
+```
+
+</Container>
+
+
+## Sizes
+
+<Container
+    vertical
+    components={<>
+        <Switch size="sm" label="Small" />
+        <Switch size="md" label="Medium" />
+        <Switch size="lg" label="Large" />
+    </>}
+>
+
+```jsx
+<Switch size="sm" label="Small" />
+<Switch size="md" label="Medium" />
+<Switch size="lg" label="Large" />
+```
+
+</Container>
