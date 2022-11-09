@@ -6,12 +6,45 @@ import { Menu as TulsaMenu } from '../Menu';
 
 interface IDropdownProps {
     children: React.ReactElement[];
+    /**
+     * Controls the side that the dropdown is justified
+     * @default "right"
+     */
     justify?: 'left' | 'right';
+    /**
+     * Controls the side that the dropdown is aligned
+     * @default "bottom"
+     */
     align?: 'top' | 'bottom';
+    /**
+     * Controls the anchor of the dropdown
+     * @default
+     * 
+     * ```jsx
+     * (props) => <Button as='button' {...triggerProps} {...props} />
+     * ```
+     */
     customTrigger?: React.ReactElement;
+    /**
+     * Props that are passed to the default anchor of the dropdown. Only applies if a no custom trigger is applied.
+     */
     triggerProps?: IButtonProps<'button'>;
+    /**
+     * Label of the anchor of the dropdown. Only applies if no custom trigger is applied.
+     */
     label: string;
+    /**
+     * Props that are applied to the `<Menu />` of the dropdown.
+     */
     menuProps?: ComponentPropsWithoutRef<'ul'>;
+    /**
+     * Props that are applied to the root `<Menu.Item />` of every item.
+     * 
+     * Functions _similarly_ to the following diagram:
+     * ```jsx
+     * <li {...tulsaItemProps} {...itemRootProps}>{child}</li>
+     * ```
+     */
     itemRootProps?: ComponentPropsWithoutRef<'li'>;
 }
 

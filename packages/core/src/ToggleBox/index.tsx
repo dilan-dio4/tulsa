@@ -3,8 +3,22 @@ import { nanoid } from 'nanoid';
 import React, { DetailedHTMLProps, InputHTMLAttributes, LabelHTMLAttributes, useRef } from 'react';
 
 export interface IToggleBox extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
+    /**
+     * Manually sets the id and accessibility of the `for` attribute of the associated label.
+     */
     id?: string;
+    /**
+     * Associated label of the box
+     */
     label?: string;
+    /**
+     * Props that are applied to the root of the label.
+     * 
+     * Functions _similarly_ to the diagram below.
+     * ```jsx
+     * <label {...tulsaDefaultProps} htmlFor={refId} {...labelProps}>{label}</label>
+     * ```
+     */
     labelProps?: DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement>;
 }
 

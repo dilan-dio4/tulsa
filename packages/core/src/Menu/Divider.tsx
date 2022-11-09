@@ -2,6 +2,9 @@ import clsx from 'clsx';
 import React from 'react';
 
 export interface IDividerProps {
+    /**
+     * If true, alters the margins of the divider for rows, as opposed to groups.
+     */
     isRowDivider?: boolean;
 }
 

@@ -3,6 +3,10 @@ import type { SVGProps } from 'react';
 import React from 'react'; // Needed
 
 export interface ISpinner extends SVGProps<SVGSVGElement> {
+    /**
+     * Controls the relative size of the spinner
+     * @default "sm"
+     */
     size?: 'sm' | 'md' | 'lg';
 }
 

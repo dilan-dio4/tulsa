@@ -62,13 +62,50 @@ function getColorScheme(variant: Variant) {
 }
 
 export interface IButtonProps<T extends ElementType> {
+    /**
+     * An element that will appear before the button's content
+     */
     leadingVisual?: React.ReactElement;
+    /**
+     * Props that will be applied to the root component of the leading visual
+     * 
+     * Operates _similarly_ to this diagram:
+     * ```
+     * <span {...tulsaDefaultProps} {...leadingVisualProps}>{leadingVisual}</span>
+     * ```
+     */
     leadingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
+    /**
+     * An element that will appear after the button's content
+     */
     trailingVisual?: React.ReactElement;
+    /**
+     * Props that will be applied to the root component of the trailing visual
+     * 
+     * Operates _similarly_ to this diagram:
+     * ```
+     * <span {...tulsaDefaultProps} {...trailingVisualProps}>{trailingVisual}</span>
+     * ```
+     */
     trailingVisualProps?: Partial<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>>;
+    /**
+     * Controls the relative size of the button
+     * @default "md"
+     */
     size?: 'xs' | 'sm' | 'md' | 'lg';
+    /**
+     * Controls the look & feel of the button
+     * @default "Primary"
+     */
     variant?: Variant;
+    /**
+     * Controls the root element that is used by the button. Can be an HTML element string or a React component.
+     * @default "button"
+     */
     as?: T;
+    /**
+     * Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`.
+     */
     selected?: boolean;
 }
 
@@ -146,6 +183,13 @@ function _Button<T extends ElementType = 'button'>({
 }
 
 export interface IButtonCounter extends DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+    /**
+     * Sets the number to display. Cast a numbers to a string.
+     * @example
+     * ```jsx
+     * <Button.Counter>{"" + 2}</Button.Counter>
+     * ```
+     */
     children: string;
 }
 
@@ -165,11 +209,32 @@ export const Button = Object.assign(_Button, {
 });
 
 export interface IIconButtonProps<T extends ElementType> {
+    /**
+     * Controls the icon that is displayed. Must be a React Element.
+     */
     icon: React.ReactElement;
+    /**
+     * Controls the relative size of the button
+     * @default "sm"
+     */
     size?: 'xs' | 'sm' | 'lg';
+    /**
+     * If true, makes the IconButton appear as a circle as opposed to a rounded square.
+     */
     circle?: boolean;
+    /**
+     * Controls the look & feel of the button
+     * @default "Primary"
+     */
     variant?: Variant;
+    /**
+     * Controls the root element that is used by the button. Can be an HTML element string or a React component.
+     * @default "button"
+     */
     as?: T;
+    /**
+     * Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`.
+     */
     selected?: boolean;
 }
 

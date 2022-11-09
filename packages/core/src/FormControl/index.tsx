@@ -4,8 +4,20 @@ import FormControlContext from './Context';
 import React, { DetailedHTMLProps, HTMLAttributes, useContext, useRef, LabelHTMLAttributes, ElementType, ComponentPropsWithoutRef } from 'react';
 
 export interface IFormControl<T extends ElementType> {
+    /**
+     * Controls the look and feel of the form.
+     * 
+     * @default "neutral"
+     */
     status?: 'neutral' | 'success' | 'error';
+    /**
+     * Manually sets the id and accessibility of the `for` attribute of the form.
+     */
     id?: string;
+    /**
+     * Controls the root element that is used by the FormControl. Can be an HTML element string or a React component.
+     * @default "div"
+     */
     as?: T;
 }
 
