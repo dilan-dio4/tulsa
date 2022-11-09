@@ -12,7 +12,7 @@ export default function Container({ children, components, vertical }) {
             >
                 {components}
             </div>
-            <div className='-mt-4 z-10 [&>.language-jsx]:pt-5 [&>.language-jsx]:rounded-t-0 [&>.language-jsx]:shadow-none [&>.language-jsx]:border'>
+            <div className='z-10 [&>.language-jsx]:overflow-hidden [&>.language-jsx]:rounded-b-lg [&>.language-jsx]:rounded-t-none  [&>.language-jsx]:shadow-none [&>.language-jsx]:border [&>.language-jsx]:border-t-0 [&>.language-jsx]:bg-slate-100'>
                 {children}
             </div>
         </div>

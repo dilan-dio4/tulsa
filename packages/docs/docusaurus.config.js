@@ -65,7 +65,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        hideOnScroll: true,
         title: 'Tulsa Components',
         logo: {
           alt: 'My Site Logo',
