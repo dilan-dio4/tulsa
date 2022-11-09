@@ -326,19 +326,14 @@ a.card {
   text-decoration: none !important;
   color: var(--ifm-color-content);
   box-shadow: none;
-  border: 1px solid #333;
   display: flex;
-  /* background-color: var(--ifm-background-color); */
+  transition: all 0.2s ease;
+  @apply bg-slate-100 border ring-1 ring-slate-200 hover:ring-2 active:ring-2 hover:ring-indigo-500 active:ring-indigo-500;
 }
 
 a.card .card__body {
   flex: 1;
   flex-grow: 1;
-}
-
-a.card:hover {
-  transition: all 0.2s ease;
-  border: 1px solid var(--ifm-color-primary);
 }
 
 .header-github-link:hover {
