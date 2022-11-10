@@ -12,7 +12,7 @@ interface IPropsTable {
 
 export default function PropsTable({ data }: IPropsTable) {
     return (
-        <div className='max-w-full overflow-scroll'>
+        <div className='max-w-full overflow-auto'>
             <table>
                 <thead>
                     <tr>

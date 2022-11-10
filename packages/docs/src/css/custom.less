@@ -297,11 +297,6 @@ body {
 }
 
 @media screen and (max-width: 996px) {
-  .row .col {
-    padding-top: var(--ifm-col-spacing-vertical);
-    padding-bottom: var(--ifm-col-spacing-vertical);
-  }
-
   article {
     padding: 0 0.5rem;
   }
@@ -313,7 +308,7 @@ a.card {
   box-shadow: none;
   display: flex;
   transition: all 0.2s ease;
-  @apply bg-slate-100 border ring-1 ring-slate-200 hover:ring-2 active:ring-2 hover:ring-indigo-500 active:ring-indigo-500;
+  @apply bg-slate-100 border ring-1 ring-slate-200 hover:ring-2 active:ring-2 hover:ring-indigo-500 active:ring-indigo-500 my-2 md:my-0;
 }
 
 a.card .card__body {
