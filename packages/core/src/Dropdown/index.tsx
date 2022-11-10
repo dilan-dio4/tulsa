@@ -18,7 +18,7 @@ interface IDropdownProps {
     align?: 'top' | 'bottom';
     /**
      * Controls the anchor of the dropdown
-     * @default
+     * @example
      * 
      * ```jsx
      * (props) => <Button as='button' {...triggerProps} {...props} />
