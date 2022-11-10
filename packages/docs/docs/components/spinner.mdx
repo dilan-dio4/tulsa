@@ -4,6 +4,7 @@ title: Spinner
 ---
 import { Spinner } from '../../../core/src';
 import Container from '../../src/components/Container';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -21,3 +22,18 @@ import Container from '../../src/components/Container';
 
 </Container>
 
+## Props
+
+<PropsTable
+    data={[
+        {
+            name: "size",
+            isRequired: false,
+            type: "'sm' | 'md' | 'lg'",
+            description: "Controls the relative size of the spinner",
+            default: '"sm"'
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.

@@ -4,6 +4,7 @@ title: FormControl
 ---
 import { TextArea, FormControl, TextInput } from '../../../core/src';
 import Container from '../../src/components/Container';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -24,6 +25,38 @@ import Container from '../../src/components/Container';
 ```
 
 </Container>
+
+## Props
+
+<PropsTable
+    data={[
+        {
+            name: "status",
+            isRequired: false,
+            type: "'neutral' | 'success' | 'error'",
+            description: "Controls the look and feel of the form",
+            default: "neutral"
+        },
+        {
+            name: "id",
+            isRequired: false,
+            type: "string",
+            description: "Manually sets the id and accessibility of the `for` attribute of the form",
+            default: ""
+        },
+        {
+            name: "as",
+            isRequired: false,
+            type: "T",
+            description: "Controls the root element that is used by the FormControl. Can be an HTML element string or a React component",
+            default: "div"
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Examples
 
 ### Success and Error
 
@@ -68,3 +101,39 @@ import Container from '../../src/components/Container';
 ```
 
 </Container>
+
+## FormControl.Label
+
+### Props
+
+<PropsTable
+    data={[
+        {
+            name: "children",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "Content of the associated form\'s label",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## FormControl.Caption
+
+### Props
+
+<PropsTable
+    data={[
+        {
+            name: "children",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "Content of the associated form\'s caption",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.

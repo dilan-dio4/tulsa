@@ -5,6 +5,7 @@ title: Button
 import { Button } from '../../../core/src';
 import Container from '../../src/components/Container';
 import { BiSearch, BiChevronRight } from 'react-icons/bi';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -21,6 +22,75 @@ import { BiSearch, BiChevronRight } from 'react-icons/bi';
 ```
 
 </Container>
+
+## Props
+
+<PropsTable 
+    data={[
+        {
+            name: "leadingVisual",
+            isRequired: false,
+            type: "React.ReactElement",
+            description: "An element that will appear before the button's content",
+            default: ""
+        },
+        {
+            name: "leadingVisualProps",
+            isRequired: false,
+            type: "HTMLProps<T>",
+            description: "Props that will be applied to the root component of the leading visual",
+            default: ""
+        },
+        {
+            name: "trailingVisual",
+            isRequired: false,
+            type: "React.ReactElement",
+            description: "An element that will appear after the button's content",
+            default: ""
+        },
+        {
+            name: "trailingVisualProps",
+            isRequired: false,
+            type: "HTMLProps<T>",
+            description: "Props that will be applied to the root component of the trailing visual",
+            default: ""
+        },
+        {
+            name: "size",
+            isRequired: false,
+            type: `'xs' | 'sm' | 'md' | 'lg'`,
+            description: "Controls the relative size of the button",
+            default: `"md"`
+        },
+        {
+            name: "variant",
+            isRequired: false,
+            type: `'Primary' | 'Secondary' | 'Invisible'`,
+            description: "Controls the look & feel of the button",
+            default: `"Primary"`
+        },
+        {
+            name: "as",
+            isRequired: false,
+            type: `T`,
+            description: "Controls the root element that is used by the button. Can be an HTML element string or a React component.",
+            default: `"button"`
+        },
+        {
+            name: "selected",
+            isRequired: false,
+            type: `boolean`,
+            description: "Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`",
+            default: ``
+        }
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+<br />
+
+## Examples
 
 ### Sizes
 
@@ -110,3 +180,21 @@ import { BiSearch, BiChevronRight } from 'react-icons/bi';
 ```
 
 </Container>
+
+## Button.Counter
+
+### Props
+
+<PropsTable 
+    data={[
+        {
+            name: "children",
+            isRequired: false,
+            type: "string",
+            description: "Sets the number to display. Cast a numbers to a string",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.

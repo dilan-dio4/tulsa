@@ -4,21 +4,51 @@ title: Radio
 ---
 import { Radio } from '../../../core/src';
 import Container from '../../src/components/Container';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     vertical
     components={<>
         <Radio />
-        <Radio label='With a label' />
+        <Radio label='With a label' checked />
         <Radio label='Disabled' disabled />
     </>}
 >
 
 ```jsx
 <Radio />
-<Radio label='With a label' />
+<Radio label='With a label' checked />
 <Radio label='Disabled' disabled />
 ```
 
 </Container>
 
+## Props
+
+<PropsTable
+    data={[
+        {
+            name: "id",
+            isRequired: false,
+            type: "string",
+            description: "Manually sets the id and accessibility of the `for` attribute of the associated label",
+            default: ""
+        },
+        {
+            name: "label",
+            isRequired: false,
+            type: "string",
+            description: "Associated label of the box",
+            default: ""
+        },
+        {
+            name: "labelProps",
+            isRequired: false,
+            type: 'HTMLProps<"label">',
+            description: "Props that are applied to the root of the label",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.

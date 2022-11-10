@@ -19,6 +19,7 @@
   --ifm-navbar-height: 4.5rem;
   --ifm-breadcrumb-border-radius: 0.5rem;
   --ifm-breadcrumb-padding-vertical: 0.2rem;
+  --ifm-table-stripe-background: #00000000;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -222,22 +223,6 @@ body {
     display: list-item;
   }
 
-  blockquote,
-  dl,
-  dd,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  hr,
-  figure,
-  p,
-  pre {
-    margin: 0;
-  }
-
   fieldset {
     margin: 0;
     padding: 0;
@@ -354,7 +339,7 @@ html[data-theme='dark'] .header-github-link:before {
 
 .navbar {
   box-shadow: none;
-  @apply border-x-0 border-t-0 border-b border-b-slate-200 border-solid md:px-[64px] bg-slate-100;
+  @apply border-x-0 border-t-0 border-b border-b-slate-200 border-solid md:px-[64px] bg-white;
 }
 
 .theme-doc-sidebar-container {
@@ -362,7 +347,7 @@ html[data-theme='dark'] .header-github-link:before {
   --ifm-menu-color-background-active: #00000000;
   --ifm-menu-link-padding-vertical: 4.5px;
   --ifm-menu-link-padding-horizontal: 10px;
-  @apply bg-slate-100 !border-r-slate-200;
+  @apply !border-r-slate-200;
   .menu__link {
     @apply text-slate-600 hover:text-slate-400 text-sm;
     &:hover {
@@ -417,10 +402,45 @@ article, .pagination-nav {
 }
 
 .theme-doc-markdown {
-  code {
-    font-size: 0.8em;
+  .prism-code {
+    code {
+      font-size: 0.8em;
+    }
   }
   padding-top: 20px;
+  table {
+    @apply w-full mx-0 border-separate border-spacing-0 table;
+    thead {
+      th:first-child {
+        @apply rounded-tl-lg;
+      }
+      th:last-child {
+        @apply rounded-tr-lg border-r;
+      }
+      @apply bg-slate-100 text-sm;
+    }
+    th, td {
+      @apply py-2 px-4 border-slate-200 border-t border-l text-start;
+    }
+    tr {
+      td:last-child {
+        @apply border-r;
+      }
+      td {
+        @apply align-top text-xs;
+      }
+      @apply hover:bg-slate-100;
+    }
+    tr:last-child td:first-child {
+      @apply rounded-bl-lg;
+    }
+    tr:last-child td:last-child {
+      @apply rounded-br-lg;
+    }
+    tr:last-child td {
+      @apply border-b;
+    }
+  }
 }
 
 .theme-doc-toc-desktop {

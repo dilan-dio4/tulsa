@@ -4,6 +4,7 @@ title: Select
 ---
 import { Select } from '../../../core/src';
 import Container from '../../src/components/Container';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -22,6 +23,31 @@ import Container from '../../src/components/Container';
 ```
 
 </Container>
+
+## Props
+
+<PropsTable
+    data={[
+        {
+            name: "placeholder",
+            isRequired: false,
+            type: "string",
+            description: "Sets an option that will be displayed automatically",
+            default: ""
+        },
+        {
+            name: "required",
+            isRequired: false,
+            type: "boolean",
+            description: "Sets whether or not a value is required to be selected for the element",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Examples
 
 ### Placeholder
 
@@ -94,3 +120,27 @@ import Container from '../../src/components/Container';
 ```
 
 </Container>
+
+## Select.Option
+
+### Props
+
+<PropsTable
+    data={[
+        {
+            name: "value",
+            isRequired: true,
+            type: "string",
+            description: "Value of the option",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Select.OptGroup
+
+### Props
+
+`HTMLProps<"optgroup">`

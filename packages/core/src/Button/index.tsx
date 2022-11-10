@@ -99,12 +99,12 @@ export interface IButtonProps<T extends ElementType> {
      */
     variant?: Variant;
     /**
-     * Controls the root element that is used by the button. Can be an HTML element string or a React component.
+     * Controls the root element that is used by the button. Can be an HTML element string or a React component
      * @default "button"
      */
     as?: T;
     /**
-     * Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`.
+     * Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`
      */
     selected?: boolean;
 }

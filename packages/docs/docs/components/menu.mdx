@@ -4,7 +4,8 @@ title: Menu
 ---
 import { Menu } from '../../../core/src';
 import Container from '../../src/components/Container';
-import { BiSearch } from 'react-icons/bi';
+import { BiSearch, BiUser, BiAlarm, BiQuestionMark, BiChevronRight } from 'react-icons/bi';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     vertical
@@ -66,3 +67,107 @@ import { BiSearch } from 'react-icons/bi';
 ```
 
 </Container>
+
+
+## Props
+
+`HTMLProps<"ul">`
+
+## Menu.Item
+
+### Props
+
+<PropsTable
+    data={[
+        {
+            name: "variant",
+            isRequired: false,
+            type: "'default' | 'dangerous' | 'success'",
+            description: "Controls the look & feel of the item",
+            default: '"default"'
+        },
+        {
+            name: "disabled",
+            isRequired: false,
+            type: "boolean",
+            description: "Sets whether or not the button is displayed as disabled or not",
+            default: ''
+        },
+        {
+            name: "selected",
+            isRequired: false,
+            type: "boolean",
+            description: "Sets whether or not the button is displayed as selected or not",
+            default: ''
+        },
+        {
+            name: "onSelect",
+            isRequired: false,
+            type: "(): any",
+            description: "Action that will triggered on click",
+            default: ''
+        },
+        {
+            name: "leadingVisual",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "An element that will appear before the items's content",
+            default: ''
+        },
+        {
+            name: "leadingVisualProps",
+            isRequired: false,
+            type: 'HTMLProps<"span">',
+            description: "Props that will be applied to the root component of the leading visual",
+            default: ''
+        },
+        {
+            name: "trailingVisual",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "An element that will appear after the items's content",
+            default: ''
+        },
+        {
+            name: "trailingVisualProps",
+            isRequired: false,
+            type: `HTMLProps<"span">`,
+            description: "Props that will be applied to the root component of the trailing visual",
+            default: ''
+        },
+        {
+            name: "description",
+            isRequired: false,
+            type: "string",
+            description: "Details of the item that will appear below the main content",
+            default: ''
+        },
+        {
+            name: "as",
+            isRequired: false,
+            type: "T",
+            description: "Controls the root element that is used by the item. Can be an HTML element string or a React component",
+            default: '"li"'
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Menu.Divider
+
+### Props
+
+<PropsTable
+    data={[
+        {
+            name: "isRowDivider",
+            isRequired: false,
+            type: "boolean",
+            description: "If true, alters the margins of the divider for rows, as opposed to groups",
+            default: ''
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.

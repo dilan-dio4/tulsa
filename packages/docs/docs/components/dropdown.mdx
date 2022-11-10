@@ -4,7 +4,8 @@ title: Dropdown
 ---
 import { Menu, Dropdown } from '../../../core/src';
 import Container from '../../src/components/Container';
-import { BiSearch, BiChevronRight, BiAlarm, BiUser, BiQuestionMark } from 'react-icons/bi';
+import { BiSearch, BiUser, BiAlarm, BiQuestionMark, BiChevronRight } from 'react-icons/bi';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -56,6 +57,63 @@ import { BiSearch, BiChevronRight, BiAlarm, BiUser, BiQuestionMark } from 'react
 
 </Container>
 
+## Props
+
+<PropsTable
+    data={[
+        {
+            name: "justify",
+            isRequired: false,
+            type: "'left' | 'right'",
+            description: "Controls the side that the dropdown is justified",
+            default: '"right"'
+        },
+        {
+            name: "align",
+            isRequired: false,
+            type: "'top' | 'bottom'",
+            description: "Controls the side that the dropdown is aligned",
+            default: '"bottom"'
+        },
+        {
+            name: "customTrigger",
+            isRequired: false,
+            type: "React.ReactElement",
+            description: "Controls the anchor of the dropdown",
+            default: ''
+        },
+        {
+            name: "triggerProps",
+            isRequired: false,
+            type: "IButtonProps<'button'>",
+            description: "Props that are passed to the default anchor of the dropdown. Only applies if a no custom trigger is applied.",
+            default: ''
+        },
+        {
+            name: "label",
+            isRequired: false,
+            type: "string",
+            description: "Label of the anchor of the dropdown. Only applies if no custom trigger is applied.",
+            default: ''
+        },
+        {
+            name: "menuProps",
+            isRequired: false,
+            type: 'HTMLProps<"ul">',
+            description: "Props that are applied to the `<Menu />` of the dropdown.",
+            default: ''
+        },
+        {
+            name: "itemRootProps",
+            isRequired: false,
+            type: 'HTMLProps<"li">',
+            description: "Props that are applied to the root `<Menu.Item />` of every item.",
+            default: ''
+        },
+    ]}
+/>
+
+## Examples
 
 ### Dropdown above
 

@@ -5,6 +5,7 @@ title: TextInput
 import { TextInput } from '../../../core/src';
 import Container from '../../src/components/Container';
 import { BiSearch, BiChevronRight, BiChevronDown } from 'react-icons/bi';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -17,6 +18,80 @@ import { BiSearch, BiChevronRight, BiChevronDown } from 'react-icons/bi';
 ```
 
 </Container>
+
+## Props
+
+<PropsTable 
+    data={[
+        {
+            name: "leadingVisual",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "An element that will appear on the left side of the input",
+            default: ""
+        },
+        {
+            name: "leadingVisualProps",
+            isRequired: false,
+            type: 'HTMLProps<"span">',
+            description: "Props that will be applied to the root component of the leading visual",
+            default: ""
+        },
+        {
+            name: "trailingVisual",
+            isRequired: false,
+            type: "string | React.ReactElement",
+            description: "An element that will appear on the right side of the input",
+            default: ""
+        },
+        {
+            name: "trailingVisualProps",
+            isRequired: false,
+            type: 'HTMLProps<"span">',
+            description: "Props that will be applied to the root component of the trailing visual",
+            default: ""
+        },
+        {
+            name: "leadingAddon",
+            isRequired: false,
+            type: "React.ReactElement",
+            description: "An element that will appear before the input's content",
+            default: ""
+        },
+        {
+            name: "trailingAddon",
+            isRequired: false,
+            type: "React.ReactElement",
+            description: "An element that will appear after the button's content",
+            default: ""
+        },
+        {
+            name: "rootProps",
+            isRequired: false,
+            type: 'HTMLProps<"span">',
+            description: "Props that are applied to the root of the input",
+            default: ""
+        },
+        {
+            name: "loading",
+            isRequired: false,
+            type: 'boolean',
+            description: "Controls whether a spinner is displayed",
+            default: ""
+        },
+        {
+            name: "as",
+            isRequired: false,
+            type: 'T',
+            description: "Controls the root element that is used by the input. Can be an HTML element string or a React component",
+            default: ""
+        },
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Examples
 
 ### Visuals
 

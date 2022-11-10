@@ -5,6 +5,7 @@ title: IconButton
 import { IconButton } from '../../../core/src';
 import Container from '../../src/components/Container';
 import { BiSearch, BiChevronRight } from 'react-icons/bi';
+import PropsTable from '../../src/components/PropsTable';
 
 <Container
     components={<>
@@ -15,12 +16,67 @@ import { BiSearch, BiChevronRight } from 'react-icons/bi';
 >
 
 ```jsx
+import { IconButton } from '@tulsa/core';
+
 <IconButton variant={"Primary"} icon={<BiSearch size={"1em"} color="inherit" />} />
 <IconButton variant={"Secondary"} icon={<BiSearch size={"1em"} color="inherit" />} />
 <IconButton variant={"Invisible"} icon={<BiSearch size={"1em"} color="inherit" />} />
 ```
 
 </Container>
+
+## Props
+
+<PropsTable 
+    data={[
+        {
+            name: "icon",
+            isRequired: true,
+            type: "React.ReactElement",
+            description: "Controls the icon that is displayed. Must be a React Element.",
+            default: ""
+        },
+        {
+            name: "size",
+            isRequired: false,
+            type: "'xs' | 'sm' | 'lg'",
+            description: "Controls the relative size of the button",
+            default: `"sm"`
+        },
+        {
+            name: "circle",
+            isRequired: false,
+            type: "boolean",
+            description: "If true, makes the IconButton appear as a circle as opposed to a rounded square.",
+            default: ""
+        },
+        {
+            name: "variant",
+            isRequired: false,
+            type: "'Primary' | 'Secondary' | 'Invisible'",
+            description: "Controls the look & feel of the button",
+            default: "'Primary'"
+        },
+        {
+            name: "as",
+            isRequired: false,
+            type: `T`,
+            description: "Controls the root element that is used by the button. Can be an HTML element string or a React component.",
+            default: `"button"`
+        },
+        {
+            name: "selected",
+            isRequired: false,
+            type: `boolean`,
+            description: "Sets whether or not the button is displayed as selected or not. Particularly useful in a `ButtonGroup`",
+            default: ``
+        }
+    ]}
+/>
+
+> Native props are forwarded to the root component.
+
+## Examples
 
 ### Circle
 
