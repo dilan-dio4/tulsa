@@ -3,18 +3,77 @@ sidebar_position: 2
 title: Installation
 ---
 
-import {
-    Button,
-    IconButton,
-    TextInput,
-    TextArea,
-    FormControl,
-    Spinner,
-    Checkbox,
-    Radio,
-    Select,
-    Switch,
-    ButtonGroup,
-    Menu,
-    Dropdown
-} from '../../core/src';
+## Quick setup
+
+This brief guide will get you up-and-running with Tulsa. Following the installation, we'll walkthrough how to theme you components with Tailwind.
+
+## Prerequisites
+
+<p style={{ margin: 0 }}>&#x2022; npm, Yarn, or pnpm</p>
+<p style={{ marginTop: 0 }}>&#x2022; A React or Next.js project with Tailwind CSS configured</p>
+
+<p>For more information on how to setup React + TailwindCSS, <a href="https://tailwindcss.com/docs/installation/framework-guides" style={{ color: 'var(--ifm-link-color)', textDecoration: 'var(--ifm-link-decoration)', transition: 'color var(--ifm-transition-fast) var(--ifm-transition-timing-default)' }}>check out this resource</a>.</p>
+
+
+
+## Install
+
+```bash
+npm install @tulsa/core
+```
+
+## Configure theme
+
+In your `tailwind.config.js` file, set a color for the key `tulsa`:
+
+```js
+// tailwind.config.js
+module.exports = {
+  // ...
+  theme: {
+    extend: {
+      colors: {
+        tulsa: {
+          50: '#fdf8f6',
+          100: '#f2e8e5',
+          200: '#eaddd7',
+          300: '#e0cec7',
+          400: '#d2bab0',
+          500: '#bfa094',
+          600: '#a18072',
+          700: '#977669',
+          800: '#846358',
+          900: '#43302b',
+        }
+      }
+    }
+  }
+}
+```
+
+:::tip
+
+<p>To generate a Tailwind CSS color palette from a hex code, <a href="https://tailwindcolorgenerator.com/" style={{ color: 'var(--ifm-link-color)', textDecoration: 'var(--ifm-link-decoration)', transition: 'color var(--ifm-transition-fast) var(--ifm-transition-timing-default)' }}>use this tool</a>.</p>
+
+:::
+
+
+### Using a default color
+
+You can use the default Tailwind CSS color palette. The example components use Tailwind's _indigo_.
+
+```js
+// tailwind.config.js
+const colors = require('tailwindcss/colors')
+
+module.exports = {
+  // ...
+  theme: {
+    extend: {
+      colors: {
+        tulsa: colors.indigo
+      }
+    }
+  }
+}
+```
