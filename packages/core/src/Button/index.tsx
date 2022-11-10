@@ -151,6 +151,17 @@ function _Button<T extends ElementType = 'button'>({
         }
     }
 
+    function getVariantGroup() {
+        switch (variant) {
+            case "Invisible":
+                return "group tulsa-button-invisible"
+            case "Primary":
+                return "group tulsa-button-primary"
+            case "Secondary":
+                return "group tulsa-button-secondary"
+        }
+    }
+
     const Component = as || 'button';
 
     return (
@@ -163,6 +174,7 @@ function _Button<T extends ElementType = 'button'>({
                 getFontSize(),
                 getPadding(),
                 getColorScheme(variant),
+                getVariantGroup(),
                 selected && 'opacity-70 border-[rgba(118, 118, 118, 0.3)] bg-gray-200',
                 props.className,
             )}
@@ -197,7 +209,15 @@ function Counter({ children, ...props }: IButtonCounter) {
     return (
         <span
             {...props}
-            className={clsx('ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em] bg-gray-200', props.className)}
+            className={
+                clsx(
+                    'ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em]',
+                    'group-[.tulsa-button-primary]:bg-gray-200',
+                    'group-[.tulsa-button-secondary]:bg-indigo-700',
+                    'group-[.tulsa-button-invisible]:bg-gray-100',
+                    props.className
+                )
+            }
         >
             {children}
         </span>
