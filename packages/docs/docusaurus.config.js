@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Tulsa',
   // tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://dilan-dio4.github.io',
+  baseUrl: '/tulsa/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -57,6 +57,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.less'),
         },
+        gtag: {
+          trackingID: 'G-8D3RFN6QMK',
+          anonymizeIP: false,
+        }
       }),
     ],
   ],
@@ -67,8 +71,8 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/tulsa-min-plain.png',
+          alt: 'Tulsa logo',
+          src: '../img/tulsa-min-plain.png',
           className: "logo-custom",
         },
         items: [
