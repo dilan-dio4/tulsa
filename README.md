@@ -23,7 +23,7 @@ Tulsa – Modern, accessible components for React & Next.js
 <br />
 
 <p align="center">
-  <img src="packages/docs/static/img/tulsa-min-background.png" width="170" alt="Keagate Icon">
+  <img src="packages/docs/static/img/tulsa-min-background.png" width="240" alt="Keagate Icon">
 </p>
 
 <hr />
