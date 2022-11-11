@@ -12,8 +12,6 @@ Tulsa – Modern, accessible components for React & Next.js
   <b>Built with TailwindCSS + HeadlessUI as an alternative to Tailwind UI</b>
 </h4>
 
-<br />
-
 <h4 align="center">
     <img alt="Snyk vulnerabilities" src="https://shields.io/snyk/vulnerabilities/github/dilan-dio4/tulsa?style=flat-square" />
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dilan-dio4/tulsa?style=flat-square">
