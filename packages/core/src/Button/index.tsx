@@ -27,33 +27,33 @@ function getColorScheme(variant: Variant) {
                 'border-gray-300',
                 'bg-white',
                 'hover:bg-gray-50',
-                'focus:ring-indigo-500',
+                'focus:ring-tulsa-500',
                 'focus:ring-offset-gray-100',
-                'active:ring-indigo-500',
+                'active:ring-tulsa-500',
                 'active:ring-offset-gray-100',
             ].join(' ');
         case 'Secondary':
             return [
                 'text-white',
                 'border-transparent',
-                'bg-indigo-600',
-                'hover:bg-indigo-700',
-                'focus:ring-indigo-500',
+                'bg-tulsa-600',
+                'hover:bg-tulsa-700',
+                'focus:ring-tulsa-500',
                 'focus:ring-offset-gray-100',
-                'active:ring-indigo-500',
+                'active:ring-tulsa-500',
                 'active:ring-offset-gray-100',
             ].join(' ');
         case 'Invisible':
             return [
                 'font-bold',
-                'text-indigo-500',
+                'text-tulsa-500',
                 'border-transparent',
                 'bg-transparent',
                 'shadow-none',
                 'hover:bg-gray-100',
-                'focus:ring-indigo-500',
+                'focus:ring-tulsa-500',
                 'focus:ring-offset-gray-100',
-                'active:ring-indigo-500',
+                'active:ring-tulsa-500',
                 'active:ring-offset-gray-100',
             ].join(' ');
         default:
@@ -213,7 +213,7 @@ function Counter({ children, ...props }: IButtonCounter) {
                 clsx(
                     'ml-0.5 text-[0.95em] px-[0.35em] py-[0.05em] font-semibold leading-none rounded-[0.95em]',
                     'group-[.tulsa-button-primary]:bg-gray-200',
-                    'group-[.tulsa-button-secondary]:bg-indigo-700',
+                    'group-[.tulsa-button-secondary]:bg-tulsa-700',
                     'group-[.tulsa-button-invisible]:bg-gray-100',
                     props.className
                 )

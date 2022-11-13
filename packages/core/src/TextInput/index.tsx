@@ -81,11 +81,11 @@ export function TextInput<T extends ElementType = 'input'>({
                 className={clsx(
                     coreStyle,
                     'focus-within:z-10 bg-white rounded-md shadow-sm',
-                    'focus-within:ring-1 focus-within:border-indigo-500 focus-within:ring-indigo-500',
+                    'focus-within:ring-1 focus-within:border-tulsa-500 focus-within:ring-tulsa-500',
                     'focus-within:group-[.is-error]:border-red-500 focus-within:group-[.is-error]:ring-red-500',
                     'focus-within:group-[.is-success]:border-green-400 focus-within:group-[.is-success]:ring-green-400',
-                    leadingVisual && 'rounded-l-none',
-                    trailingVisual && 'rounded-r-none',
+                    leadingVisual && '!rounded-l-none',
+                    trailingVisual && '!rounded-r-none',
                 )}
             >
                 {leadingAddon && <span className='mr-2'>{leadingAddon}</span>}

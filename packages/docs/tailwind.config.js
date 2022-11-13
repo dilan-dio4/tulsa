@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,5 +10,12 @@ module.exports = {
     preflight: false,
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  important: ".theme-doc-markdown"
+  important: ".theme-doc-markdown",
+  theme: {
+    extend: {
+      colors: {
+        tulsa: colors.indigo
+      }
+    }
+  }
 }

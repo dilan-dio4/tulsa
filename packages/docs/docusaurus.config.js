@@ -72,7 +72,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Tulsa logo',
-          src: '../img/tulsa-min-plain.png',
+          src: '/tulsa/img/tulsa-min-plain.png',
           className: "logo-custom",
         },
         items: [

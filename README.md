@@ -30,7 +30,7 @@ Tulsa – Modern, accessible components for React & Next.js
 
 ## Documentation
 
-The documentation for Tulsa is available at [some link](https://asdf.com). There you can see all of the components and find the theming guide.
+The documentation for Tulsa is available at [some link](https://dilan-dio4.github.io/tulsa/). There you can see all of the components and find the theming guide.
 
 ## Installation
 
@@ -38,4 +38,4 @@ The documentation for Tulsa is available at [some link](https://asdf.com). There
 npm i @tulsa/core
 ```
 
-For setup instructions, head to the [documentation here](https://asdf.com).
+For setup instructions, head to the [documentation here](https://dilan-dio4.github.io/tulsa/installation).

@@ -37,11 +37,11 @@ export function Switch({ id, label, labelProps, size = 'md', ...props }: { size?
         'peer-focus:ring-2',
         'peer-focus:ring-offset-2',
         'peer-focus:ring-offset-gray-100',
-        'peer-focus:ring-indigo-500',
+        'peer-focus:ring-tulsa-500',
         'peer-active:ring-2',
         'peer-active:ring-offset-2',
         'peer-active:ring-offset-gray-100',
-        'peer-active:ring-indigo-500',
+        'peer-active:ring-tulsa-500',
     ].join(' ');
 
     return (
@@ -52,7 +52,7 @@ export function Switch({ id, label, labelProps, size = 'md', ...props }: { size?
                     getSwitchSize(),
                     getSwitchKnobSize(),
                     rootPseudoClassNames,
-                    'bg-gray-200 rounded-full peer peer-checked:bg-indigo-500',
+                    'bg-gray-200 rounded-full peer peer-checked:bg-tulsa-500',
                     "peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:transition-all",
                 )}
             />

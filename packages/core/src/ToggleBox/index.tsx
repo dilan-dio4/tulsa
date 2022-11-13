@@ -35,12 +35,12 @@ const ToggleBox =
         const rootPseudoClassNames = [
             'focus:ring-2',
             'focus:ring-offset-2',
-            'focus:ring-indigo-500',
+            'focus:ring-tulsa-500',
             'active:ring-2',
             'active:ring-offset-2',
-            'active:ring-indigo-500',
-            'checked:bg-indigo-600',
-            'checked:ring-indigo-600',
+            'active:ring-tulsa-500',
+            'checked:bg-tulsa-600',
+            'checked:ring-tulsa-600',
         ].join(' ');
 
         return (
