@@ -24,12 +24,16 @@ npm install @tulsa/core
 
 ## Configure theme
 
-In your `tailwind.config.js` file, set a color for the key `tulsa`:
+In your `tailwind.config.js` file, set a color for the key `tulsa` and add the Tulsa components to Tailwind's `content` array:
 
 ```js
 // tailwind.config.js
 module.exports = {
   // ...
+  content: [
+    // ...
+    './node_modules/@tulsa/core/build/**/*.js'
+  ],
   theme: {
     extend: {
       colors: {
@@ -68,6 +72,10 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   // ...
+  content: [
+    // ...
+    './node_modules/@tulsa/core/build/**/*.js'
+  ],
   theme: {
     extend: {
       colors: {
