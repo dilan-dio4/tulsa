@@ -16,7 +16,7 @@ Tulsa – Modern, accessible components for React & Next.js
     <img alt="Snyk vulnerabilities" src="https://shields.io/snyk/vulnerabilities/github/dilan-dio4/tulsa?style=flat-square" />
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dilan-dio4/tulsa?style=flat-square">
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/dilan-dio4/tulsa?style=flat-square">
-    <img alt="Bundlephobia min size" src="https://img.shields.io/bundlephobia/min/react?style=flat-square">
+    <img alt="Bundlephobia min size" src="https://img.shields.io/bundlephobia/min/tulsa/core?style=flat-square">
     <img alt="npms.io quality score" src="https://img.shields.io/npms-io/quality-score/tulsa?style=flat-square">
 </h4>
 
@@ -30,7 +30,7 @@ Tulsa – Modern, accessible components for React & Next.js
 
 ## Documentation
 
-The documentation for Tulsa is available at [some link](https://dilan-dio4.github.io/tulsa/). There you can see all of the components and find the theming guide.
+More information about Tulsa is available [here](https://dilan-dio4.github.io/tulsa/), including component playgrounds and the theming guide.
 
 ## Installation
 
